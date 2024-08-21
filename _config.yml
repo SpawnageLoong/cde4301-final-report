@@ -1,8 +1,10 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: CDE4301 Space Radiation Payload
+description: An empty documentation page for the Space Radiation Monitoring and Experiment Payload for NUS CDE4301
 theme: just-the-docs
 
 url: https://just-the-docs.github.io
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+color_scheme: dark
