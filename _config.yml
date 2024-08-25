@@ -8,6 +8,3 @@ aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
 color_scheme: dark
-
-# Set a path/url to a favicon that will be displayed by the browser
-favicon_ico: "/assets/favicon.ico"
