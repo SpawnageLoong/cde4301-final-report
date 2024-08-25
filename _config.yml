@@ -1,10 +1,30 @@
 title: CDE4301 Space Radiation Payload
 description: An empty documentation page for the Space Radiation Monitoring and Experiment Payload for NUS CDE4301
 theme: just-the-docs
-
-url: https://just-the-docs.github.io
+baseurl: "/cde4301-docs"
+url: "https://spawnageloong.github.io"
+repository: SpawnageLoong/cde4301-docs
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
 color_scheme: dark
+
+# Set a path/url to a favicon that will be displayed by the browser
+favicon_ico: "/assets/favicon.ico"
+
+defaults:
+  -
+    scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "default"
+
+# Aux links for the upper right navigation
+aux_links:
+  "GitHub Repo":
+    - "//github.com/SpawnageLoong/cde4301-docs"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
