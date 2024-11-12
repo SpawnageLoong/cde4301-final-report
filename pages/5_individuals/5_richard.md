@@ -2,14 +2,17 @@
 title: Richard
 parent: Individual Contributions
 nav_order: 4
+last_modified_date: 12-11-2024
 ---
 
-# Richard Loong - Software Development
-
-Richard Loong Cheng Jun
-Year 4 Computer Engineering
-A0233496X
-TODO: Add profile picture
+<div style="display:flex">
+  <img src="{{site.baseurl}}/assets/images/profiles/richard.jpg" alt="Richard Loong" width="200" style="border-radius:50%">
+  <div style="margin-left: 20px">
+    <h2>Richard Loong Cheng Jun</h2>
+    <h3>Year 4 Computer Engineering</h3>
+    <h3>A0233496X</h3>
+  </div>
+</div>
 
 ## Scope of Work
 
