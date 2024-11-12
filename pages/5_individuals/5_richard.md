@@ -20,8 +20,6 @@ As the main software developer of the team, my scope of work can broadly be desc
 - Implement the necessary protocols to enable communication with the parent satellite
 - Integrate software from the rest of the team into a single software package
 
-TODO: Add image of cropped system architecture diagram
-
 ## Design Objectives
 
 The main objectives of my part of the project include:
@@ -106,14 +104,14 @@ The ATmega32U4 uses 12-bit memory addresses, with each address representing 1 by
 the address to represent the specific bit that has flipped. This means each bit can be represented by a 16-bit (2-byte)
 address.
 
+<img src="{{site.baseurl}}/assets/images/richard/Memory%20Address.png" alt="memory address of bit 4" width="400">
+
 With 256 bytes allocated to each MCU, up to 128 flipped bits can be recorded and stored. Assuming 10 bit-flips per day
 per 1 kB of SRAM, we expect a mean of 25 bit-flips per day per MCU, or 1 bit-flip per 1 hour experiment. The 128 error
 capacity should be sufficient to record all errors that occur.
 
 Another benefit of this method is that less than 256 bytes will be used if there are fewer bit-flips, allowing the
 experiment to extend beyond the current 1-hour duration if necessary without any memory limitations.
-
-TODO: Talk about 10% sampling if word count allows
 
 ### Electrical Interfaces
 
@@ -147,14 +145,14 @@ so the "manufacturer default" pinout from Gomspace products is being used:
 
 This pinout is subject to change depending on rideshare specifications.
 
-TODO: Add image
+<img src="{{site.baseurl}}/assets/images/richard/PC104%20Pinout.png" alt="pc104 pinout diagram" width="600">
 
 #### Molex Picoblade
 
 For rideshares without the PC104 pinstack, the picoblade connector will be used. The picoblade connector supports up to
 2.0A per connection and has flown on previous spacecraft.
 
-TODO: Add image
+<img src="{{site.baseurl}}/assets/images/richard/PicoBlade.avif" alt="molex picoblade connectors">
 
 ### Communication Protocol (Layer 2)
 
@@ -164,7 +162,7 @@ Faraday Dragon rideshare. The primary MCU (ZSOM) does not have any onboard CAN h
 The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050 and there are many software libraries available
 that support these two chips. The CAN Controller connects to the SPI of the primary MCU.
 
-TODO: Add image
+<img src="{{site.baseurl}}/assets/images/richard/canbus-module.png" alt="canbus module using the MCP2515" width="400">
 
 ### Communication Protocol (Layers 3+)
 
@@ -174,8 +172,6 @@ TCP/IP model, and is used as part of the messaging system on the Faraday Dragon 
 On top of CSP, the Faraday Dragon uses an Abstract Messaging Service (AMS) that is used to send Service Operations
 Messages that correspond to the various services of the spacecraft such as timestamp sharing.
 
-TODO: Add image
-
 ### Payload Interface Emulator (PIE)
 
 For testing, a Raspberry Pi 4B with the Waveshare RS485 CAN Hat is being used to emulate the Onboard Computer (OBC).
@@ -184,7 +180,7 @@ network via SSH.
 
 The operating system running on the PIE is Raspberry Pi OS (32-bit)
 
-TODO: Add image
+<img src="{{site.baseurl}}/assets/images/richard/pi%20with%20hat.png" alt="Raspberry Pi with CAN Hat" width="400">
 
 ## Implementation and Testing
 
@@ -192,7 +188,17 @@ TODO: Add image
 
 Sample data was successfully written and read from the FRAM.
 
-TODO: Image map with hover
+// TODO: Add hover
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 835 423">
+  <image width="835" height="423" xlink:href="{{site.baseurl}}/assets/images/richard/data_frame_test.png"></image>
+    <rect x="88" y="98" fill="red" opacity="30%" width="84" height="15"></rect>
+    <rect x="181" y="98" fill="green" opacity="30%" width="84" height="15"></rect>
+    <rect x="276" y="98" fill="blue" opacity="30%" width="48" height="15"></rect>
+    <rect x="324" y="98" fill="yellow" opacity="30%" width="35" height="15"></rect>
+    <polygon points="370,97,828,97,828,240,361,240,361,257,88,257,88,116,370,116" fill="purple" opacity="30%"></polygon>
+    <polygon points="370,243,828,243,828,384,361,384,361,401,88,401,88,261,370,261" fill="orange" opacity="30%"></polygon>
+</svg>
 
 ### PIE Setup
 
@@ -202,7 +208,7 @@ RS485 CAN Hat User Guide.
 The CAN interface was tested and proven to be functional, able to both send and receive CAN frames via command line on
 the loopback interface.
 
-TODO: Image here
+<img src="{{site.baseurl}}/assets/images/richard/CAN_interface_test.png" alt="CAN testing on loopback" width="800">
 
 ### Serial Data transfer via CAN
 
@@ -210,19 +216,19 @@ CAN frames were successfully sent and received between the PIE and the primary M
 [AA_MCP2515](https://github.com/codeljo/AA_MCP2515) library was used on the primary MCU as this library allows for
 easier customisation of pinouts and changing frame IDs.
 
-TODO: Images here
+<img src="{{site.baseurl}}/assets/images/richard/CAN_test_zsom-to-pie.png" alt="CAN testing on can0" width="800">
 
 ### CSP Installation on PIE
 
 CSP was successfully installed on the PIE, following the instructions in the documentation via the meson build system.
 Examples were successfully built and the server-client example was able to run on the loopback interface.
 
-TODO: Image here
+<img src="{{site.baseurl}}/assets/images/richard/CSP_test_loopback.png" alt="CSP testing on loopback" width="600">
 
 The same server-client example could be started on the CAN interface, but no example messages are sent when only 1
 client is on the network, so full functionality could not be verified.
 
-TODO: Image here
+<img src="{{site.baseurl}}/assets/images/richard/CSP_test_can0.png" alt="CSP testing on can0" width="600">
 
 ### CSP Installation on MCU
 
@@ -238,7 +244,8 @@ as the default build appears to rely on certain Linux system functions that do n
 There is a commit in the CSP GitHub repo that provides instructions on building a CSP example for Zephyr, but the build
 process failed.
 
-TODO: Images here
+<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_commit.png" alt="commit in CSP GitHub" width="400">
+<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_build_fail.png" alt="csp fails to build">
 
 ## Future Work
 
