@@ -16,3 +16,6 @@ vendor/
 
 # Ignore IDE configs
 .idea/
+
+# Ignore Gemfile.lock from version control
+Gemfile.lock
