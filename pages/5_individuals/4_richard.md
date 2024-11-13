@@ -2,6 +2,7 @@
 title: Richard
 parent: Individual Contributions
 nav_order: 4
+permalink: /richard/
 last_modified_date: 12-11-2024
 ---
 
