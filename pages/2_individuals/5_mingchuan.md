@@ -94,7 +94,7 @@ To resolve the safety issue and increase the efficiency, the third design was de
 
 <div class="fig-label">Figure 5-8. Side view of the prototype. Image shared with ASI-302.</div>
 
-<img src="{{site.baseurl}}/assets/images/mingchuan/img_9.png" alt="fig 5-9" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/mingchuan/img_9.png" alt="fig 5-9" width="450" class="img-center">
 
 <div class="fig-label">Figure 5-9. Isometric view of the prototype. Image shared with ASI-302.</div>
 
