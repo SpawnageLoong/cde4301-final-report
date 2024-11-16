@@ -70,7 +70,15 @@ SEE happens when energetic particles such as solar protons, heavier ions, neutro
 
 ### 1.3.2 Radiation Protection Features
 
-TODO
+A method for managing SEE is to design fault-tolerant systems that can continue to operate when a component experiences a fault. However, adding fault management features can increase the development timeline greatly, as each individual potential failure mode must be identified and addressed (Lara et al., 2023). Many smaller developer teams may not be able to afford the delays needed to implement a fully fault-tolerant system.
+
+In most cases of SEE, power cycling can help reset the system and resolve any issues (De Aguiar et al., 2024). However, frequent power cycling, especially when the electronics have a high risk of experiencing SEE, will cause frequent disruptions to their function. This will derail their operations. 
+
+Another way to prevent SEE from occurring is using radiation-hardened components that have a low risk of experiencing SEU. These components are designed, and certified to withstand high levels of radiation, in a process called Radiation Hardened By Design. However, these components are very expensive and their development period is lengthy due to radiation testing (Parris, 2023). 
+
+Alternatively, radiation-tolerant components with flight heritage can be used instead. They can tolerate more radiation doses than normal off-the-shelf parts but less than that of radiation-hardened components. These components are neither tested nor certified in their performance in high-radiation environments, but they have been used on payloads without any known issues. However, they do not guarantee it will not experience SEE (Taylor, 2023).
+
+Shielding is also another common way to physically block radiation particles from damaging electronics. It is used by many space agencies due to its simplicity and effectiveness (NASA. n.d.). 
 
 ## 1.4 Problem Statement
 
@@ -102,7 +110,7 @@ ZES is the Singaporean company that designed the ZSOM-M01 board to be used as ou
 
 ## 1.6 Design Statement
 
-We aim to design a radiation measurement payload that will allow for the characterization of radiation in the SAA of the VAB to investigate the correlation between radiation and malfunctions in COTS electronic components, and validate shielding as a cheaper method of protection against radiation.
+We aim to design a radiation measurement payload that will allow for the characterization of radiation in the SAA of the VAB to investigate the correlation between radiation and malfunctions in COTS electronic components. We will be using shielding as our radiation protection method and validate shielding as a cheaper method of protection against radiation.
 
 ## 1.7 Value Proposition
 
@@ -112,7 +120,8 @@ The data gathered by our payload can be used to develop lower-cost solutions for
 
 We will also be able to provide rideshare providers with more insights into the effects of SEE on rideshare satellites and their client payloads.
 
-We aim to fly our payload through the South Atlantic Anomaly, which is known for its known for its high radiation. This will allow us to assess the conduct of our experiment under some of the most challenging radiation conditions
+We aim to fly our payload through the South Atlantic Anomaly, which is known for its high radiation levels (Meier et al., 2023). This will allow us to assess the conduct of our experiment under some of the most challenging radiation conditions
+
 
 ## System Architecture
 
