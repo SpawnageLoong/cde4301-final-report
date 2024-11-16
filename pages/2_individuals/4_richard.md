@@ -192,8 +192,6 @@ The operating system running on the PIE is Raspberry Pi OS (32-bit)
 
 Sample data was successfully written and read from the FRAM.
 
-// TODO: Add hover
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 835 423">
   <image width="835" height="423" xlink:href="{{site.baseurl}}/assets/images/richard/data_frame_test.png"></image>
     <rect x="88" y="98" fill="red" opacity="30%" width="84" height="15"></rect>
