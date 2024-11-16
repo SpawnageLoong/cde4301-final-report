@@ -14,9 +14,9 @@ permalink: /sowmya/
   </div>
 </div>
 
-# 2. The Bit Flip Experiment
+# 3. The Bit Flip Experiment
 
-## 2.1 Objectives, Scope of Work & Deliverables
+## 3.1 Objectives, Scope of Work & Deliverables
 
 <b>Objective:</b> The complete implementation of the Radiation-SEU Correlation experiment. 
 
@@ -24,27 +24,29 @@ permalink: /sowmya/
 Proposal of Radiation-SEU Correlation Experiment
 PCB Implementation of the Proposed Experiment for the Payload.
 
-## Background & Research Gap Identification
+## 3.2 Background & Research Gap Identification
 
-### 2.2.1 The Reason For Monitoring Bit Flips 
+### 3.2.1 The Reason For Monitoring Bit Flips 
 
 Bits that represent either data or programs, are stored in computer memory as charge. Different memory devices deal with different levels of charge to store bits. When ionizing particle radiation strikes a material, it can alter this charge, changing 0’s to 1’s and vice versa. These flips cause corruption in both program and data memory and are called SEU. [[1]]({{site.baseurl}}/references/#1-baraniuk-c-2022-october-12-the-computer-errors-from-outer-space-bbc-link)
 
-### 2.2.2 Bit Flip Experiments Carried Out
+### 3.2.2 Bit Flip Experiments Carried Out
 
 While some microcontrollers have been in LEO, the only experiment carried out and available online is by Utah State University [[5]]({{site.baseurl}}/references/#5-olsen-w-wood-b-dennison-j-nd-microcontroller-survivability-in-space-conditions-link), but the experiment was conducted in a lab environment, and the data collected was limited. The diagram below summarizes the current state of research on bit flips in space. 
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_1.jpg" alt="state of bit flip research" width="700">
 
+<div class="fig-label">Fig 3-1.</div>
+
 <b>Hence, there is a gap in research about bit flips in microcontrollers in space environment. </b>
 
 While data from computers can give cubesat developers a rough idea of what to expect, the data cannot be confidently used for microcontrollers. Hence, our payload intends to bridge this gap in research and benefit our stakeholders. 
 
-## 2.3 Design Process
+## 3.3 Design Process
 
-### 2.3.1 Concept of Experiment
+### 3.3.1 Concept of Experiment
 
-#### 2.3.1.1 Basic Idea
+#### Basic Idea
 
 <ul>
 	<li>The experiment comprises microcontrollers of the same kind being sent to space, both shielded and unshielded.</li>
@@ -54,13 +56,15 @@ While data from computers can give cubesat developers a rough idea of what to ex
 	<li>The central microcontroller then computes the error count by comparing the fixed pattern with the received pattern and also stores either error indices or a 10% sample of the SRAM to memory. (information to be stored is decided by Richard)</li>
 	<li>The radiation counts per minute is measured by a Geiger Muller tube (selected by Wei Hao)</li>
 </ul>
-#### 2.3.1.2 Possible Inferences From Experiment Data
+
+#### Possible Inferences From Experiment Data
+
 1. The error count of the unshielded microcontroller would tell us the extent of radiation tolerance of the chosen MCU.
 2. Comparing the error count of the unshielded microcontroller with the Radiation CPM of the Geiger Tube would allow us to quantify the correlation between SEU and particle radiation in LEO.
 3. Comparing error counts of the shielded and unshielded microcontrollers would quantify the effectiveness of the shielding method.
 
 
-### 2.3.2 Design Specifications 
+### 3.3.2 Design Specifications 
 
 <table>
   <thead>
@@ -104,20 +108,23 @@ While data from computers can give cubesat developers a rough idea of what to ex
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-1.</div>
 
-### 2.3.3 Design Choices Reasoning
+### 3.3.3 Design Choices Reasoning
 
 For each aspect of the experiment, a design choice had to be made, as elaborated below.
 
-#### 2.3.3.1 The Memory Device 
+#### The Memory Device 
 
 <b>The Ideal Case:</b> Easy to read, Highly susceptible to bit flips, Size of 1 to 2.56 kB, Easy to reset, does not lose data upon power cycle due to SEL .
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_2.jpg" alt="bit flip measurement area selection" width="700">
 
+<div class="fig-label">Table 3-2.</div>
+
 Due to the highest number of positives, the SRAM was chosen as the memory device. The one drawback, that is of data loss upon occasional latch-up events, is deemed to be worth the benefit of a simpler reset, which will be needed more often than the latch-up events.
 
-#### 2.3.3.2 ZSOM to Microcontroller Communication
+#### ZSOM to Microcontroller Communication
 
 The below table lists the communication peripherals on the ZSOM board and its availability or relevance for this experiment.
 
@@ -144,6 +151,7 @@ The below table lists the communication peripherals on the ZSOM board and its av
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-3.</div>
 
 Due to I2C being the only interface on the ZSOM that is available for use and supports multiple devices, I2C is chosen as the communication interface between the ZSOM and the ATMegas. 
 
@@ -151,12 +159,14 @@ Since it is known that I2C can face problems in the space environment, the exper
 
 Further elaboration on the various issues faced by I2C and our approach towards managing it elaborated on in the Appendix, Section D.2
 
-#### 2.3.3.3. The Microprocessor
+#### The Microprocessor
 <b>The Ideal Case:</b> Has I2C Interface, a readable SRAM, <span style="color: red; text-decoration: underline; font-style: italic;">NO</span> flight heritage, SRAM in 1-2.56 kB size range, high probability of use in future missions 
 
 After applying an initial filter of SRAM sizes, availability of documentation, popularity, and presence of unique features, the following 3 microprocessors were shortlisted for a good demonstration of the reasons for selection.
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_3.jpg" alt="microcontroller selection" width="700">
+
+<div class="fig-label">Table 3-4.</div>
 
 Hence, ATMega32U4, having the most positives, is selected as the Microcontroller under experiment.
 
@@ -164,7 +174,7 @@ The appendix further elaborates on
 The reasoning towards not selecting other microcontrollers with USB support (Appendix Section D.3)
 Explanation of the flight heritage relevance of the ATMega328P (Appendix Section D.4)
  
-#### 2.3.3.4 Other Components
+#### Other Components
 
 <table>
   <thead>
@@ -203,8 +213,9 @@ Explanation of the flight heritage relevance of the ATMega328P (Appendix Section
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-5.</div>
 
-### 2.3.4 Design Choices Summary
+### 3.3.4 Design Choices Summary
 The table below summarizes the final choices made for each component.
 
 <table>
@@ -262,16 +273,19 @@ The table below summarizes the final choices made for each component.
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-6.</div>
 
-## 2.3.5 Final Design of Experiment
+## 3.3.5 Final Design of Experiment
 
 The diagram below illustrates the working of the experiment, using the final design choices. As bit flips occur in the ATMega32U4’s, their SRAM Dump will reflect them.
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_4.jpg" alt="bit flip experiment architecture diagram" width="700">
 
-## 2.4 Prototyping and Testing
+<div class="fig-label">Fig 3-2.</div>
 
-### 2.4.1 Prototyping Objectives 
+## 3.4 Prototyping and Testing
+
+### 3.4.1 Prototyping Objectives 
 
 <ul> 
 <li>To provide proof of concepts used in the experiment.</li> 
@@ -279,7 +293,7 @@ The diagram below illustrates the working of the experiment, using the final des
 <li>To verify repeatability of the experiment.</li> 
 </ul>
 
-### 2.4.2 Description of Prototype
+### 3.4.2 Description of Prototype
 The below table describes how each aspect was implemented in the prototype. 
 
 <table>
@@ -309,10 +323,11 @@ The below table describes how each aspect was implemented in the prototype.
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-7.</div>
 
 Pictures and Specifics of the prototype and some verifications/characterizations are present in Appendix Section D.5
 
-### 2.4.3 Verifications of Proof of Concepts
+### 3.4.3 Verifications of Proof of Concepts
 
 <table>
   <thead>
@@ -341,7 +356,9 @@ Pictures and Specifics of the prototype and some verifications/characterizations
   </tbody>
 </table>
 
-### 2.4.4. Data Gathered Through Testing
+<div class="fig-label">Table 3-8.</div>
+
+### 3.4.4. Data Gathered Through Testing
 <table>
   <thead>
     <tr>
@@ -381,6 +398,8 @@ Pictures and Specifics of the prototype and some verifications/characterizations
   </tbody>
 </table>
 
+<div class="fig-label">Table 3-9.</div>
+
 The expected differences in functionality of the prototype and the final PCB implementation are as follows
 <ul>
 <li>ZSOM current consumption will be different from the SparkFun Pro Micro that is      currently being used as the Master.</li>
@@ -390,7 +409,7 @@ The expected differences in functionality of the prototype and the final PCB imp
 
 Despite these differences the testing has provided rough estimates that verifies the feasibility of the experiment. 
 
-## 2.5 Moving Forward
+## 3.5 Moving Forward
 
 The work achieved thus far is the first deliverable, “Proposal of Radiation-SEU Correlation Experiment”. Additionally, the functionality of concepts and ability to adhere to specifications is verified. 
 
