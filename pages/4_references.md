@@ -102,3 +102,6 @@ permalink: /references/
 
 ### National Aeronautics and Space Administration. (2020). A researcher’s guide to space environmental effects. [Link](https://www.nasa.gov/wp-content/uploads/2020/10/researchers-guide-space-environment-effects_tagged.pdf?emrc=3de546)
 
+### NASA. (n.d.). Space faring: The radiation challenge. [Link](https://www.nasa.gov/wp-content/uploads/2009/07/284275main_Radiation_HS_Mod3.pdf) 
+
+### Meier, M. M., Berger, T., Jahn, T., Matthiä, D., Plettenberg, M. C., Scheibinger, M., Schennetten, K., & Wirtz, M. (2023). Impact of the South Atlantic Anomaly on radiation exposure at flight altitudes during solar minimum. Scientific Reports, 13(1). [Link](https://doi.org/10.1038/s41598-023-36190-5)
