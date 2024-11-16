@@ -1,6 +1,6 @@
 ---
 title: External Resources
-nav_order: 6
+nav_order: 999
 ---
 
 Useful links for later reference.
