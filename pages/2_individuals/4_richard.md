@@ -15,7 +15,9 @@ last_modified_date: 12-11-2024
   </div>
 </div>
 
-## Scope of Work
+# 4. Software Development
+
+## 4.1 Scope of Work
 
 As the main software developer of the team, my scope of work can broadly be described as the following:
 
@@ -24,7 +26,7 @@ As the main software developer of the team, my scope of work can broadly be desc
 - Implement the necessary protocols to enable communication with the parent satellite
 - Integrate software from the rest of the team into a single software package
 
-## Design Objectives
+## 4.2 Design Objectives
 
 The main objectives of my part of the project include:
 
@@ -33,7 +35,7 @@ The main objectives of my part of the project include:
 - Sending data to the parent satellite
 - Handling commands received from the parent satellite
 
-## Design Requirements
+## 4.3 Design Requirements
 
 The primary design requirement for my part is to ensure that our payload can be integrated with the parent satellite.
 Therefore, the specifications I have to meet are entirely dependent on our rideshare partner.
@@ -50,9 +52,9 @@ Therefore, I am basing many of my design choices on the Faraday Dragon spacecraf
 some details such as mission parameters are still not determinable as there is not a specific mission to base our
 experiments on.
 
-## Design Choices
+## 4.4 Design Choices
 
-### Data Frame
+### 4.4.1 Data Frame
 
 Experiment data will be stored in the 32kB FRAM of the primary MCU. The actual experiment duration will depend on our
 parent satellite, but for development purposes, I am assuming the following mission parameters:
@@ -67,6 +69,8 @@ of 533 bytes of storage. The planned data frame uses up to 524 bytes of storage.
 |:-----------|:---------------|:---------------|:---------------|:-------------------|:-------------------|
 | 4 bytes    | 4 bytes        | 2 bytes        | 2 bytes        | 256 bytes*         | 256 bytes*         |
 | signed int | unsigned int   | unsigned int   | unsigned int   | custom data type   | custom data type   |
+
+<div class="fig-label">Table 4-1. Custom data frame structure</div>
 
 #### Epoch Time
 
@@ -108,7 +112,9 @@ The ATmega32U4 uses 12-bit memory addresses, with each address representing 1 by
 the address to represent the specific bit that has flipped. This means each bit can be represented by a 16-bit (2-byte)
 address.
 
-<img src="{{site.baseurl}}/assets/images/richard/Memory%20Address.png" alt="memory address of bit 4" width="400">
+<img src="{{site.baseurl}}/assets/images/richard/Memory%20Address.png" alt="memory address of bit 4" width="400" class="img-center">
+
+<div class="fig-label">Figure 4-1. Memory address of bits</div>
 
 With 256 bytes allocated to each MCU, up to 128 flipped bits can be recorded and stored. Assuming 10 bit-flips per day
 per 1 kB of SRAM, we expect a mean of 25 bit-flips per day per MCU, or 1 bit-flip per 1 hour experiment. The 128 error
@@ -117,7 +123,7 @@ capacity should be sufficient to record all errors that occur.
 Another benefit of this method is that less than 256 bytes will be used if there are fewer bit-flips, allowing the
 experiment to extend beyond the current 1-hour duration if necessary without any memory limitations.
 
-### Electrical Interfaces
+### 4.4.2 Electrical Interfaces
 
 The electrical interfaces are the electrical connections between the payload and the parent satellite. These include
 power delivery and communications. There are a total of 6 pins needed for this interface:
@@ -147,18 +153,24 @@ so the "manufacturer default" pinout from Gomspace products is being used:
 | CAN H      | H1 Pin 1  |
 | CAN L      | H1 Pin 3  |
 
+<div class="fig-label">Table 4-2. PC104 pinout</div>
+
 This pinout is subject to change depending on rideshare specifications.
 
-<img src="{{site.baseurl}}/assets/images/richard/PC104%20Pinout.png" alt="pc104 pinout diagram" width="600">
+<img src="{{site.baseurl}}/assets/images/richard/PC104%20Pinout.png" alt="pc104 pinout diagram" width="600" class="img-center">
+
+<div class="fig-label">Figure 4-2. PC104 pinout diagram</div>
 
 #### Molex Picoblade
 
 For rideshares without the PC104 pinstack, the picoblade connector will be used. The picoblade connector supports up to
 2.0A per connection and has flown on previous spacecraft.
 
-<img src="{{site.baseurl}}/assets/images/richard/PicoBlade.avif" alt="molex picoblade connectors">
+<img src="{{site.baseurl}}/assets/images/richard/PicoBlade.avif" alt="molex picoblade connectors" class="img-center">
 
-### Communication Protocol (Layer 2)
+<div class="fig-label">Figure 4-3. Molex Picoblade connectors</div>
+
+### 4.4.3 Communication Protocol (Layer 2)
 
 CAN is being used as the layer 2 communications protocol. It is widely used and is one of the protocols used by the
 Faraday Dragon rideshare. The primary MCU (ZSOM) does not have any onboard CAN hardware, so an external module is needed.
@@ -166,9 +178,11 @@ Faraday Dragon rideshare. The primary MCU (ZSOM) does not have any onboard CAN h
 The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050 and there are many software libraries available
 that support these two chips. The CAN Controller connects to the SPI of the primary MCU.
 
-<img src="{{site.baseurl}}/assets/images/richard/canbus-module.png" alt="canbus module using the MCP2515" width="400">
+<img src="{{site.baseurl}}/assets/images/richard/canbus-module.png" alt="canbus module using the MCP2515" width="400" class="img-center">
 
-### Communication Protocol (Layers 3+)
+<div class="fig-label">Figure 4-4. CAN bus module using the MCP2515</div>
+
+### 4.4.4 Communication Protocol (Layers 3+)
 
 Cubesat Space Protocol (CSP) is used as the higher layer communications protocol. It is a protocol stack following the
 TCP/IP model, and is used as part of the messaging system on the Faraday Dragon rideshare.
@@ -176,7 +190,7 @@ TCP/IP model, and is used as part of the messaging system on the Faraday Dragon 
 On top of CSP, the Faraday Dragon uses an Abstract Messaging Service (AMS) that is used to send Service Operations
 Messages that correspond to the various services of the spacecraft such as timestamp sharing.
 
-### Payload Interface Emulator (PIE)
+### 4.4.5 Payload Interface Emulator (PIE)
 
 For testing, a Raspberry Pi 4B with the Waveshare RS485 CAN Hat is being used to emulate the Onboard Computer (OBC).
 CAN is set up as a network interface and packets can be sent via command line. Controlling the PIE is done over the
@@ -184,11 +198,13 @@ network via SSH.
 
 The operating system running on the PIE is Raspberry Pi OS (32-bit)
 
-<img src="{{site.baseurl}}/assets/images/richard/pi%20with%20hat.png" alt="Raspberry Pi with CAN Hat" width="400">
+<img src="{{site.baseurl}}/assets/images/richard/pi%20with%20hat.png" alt="Raspberry Pi with CAN Hat" width="400" class="img-center">
 
-## Implementation and Testing
+<div class="fig-label">Figure 4-5. Raspberry Pi with Waveshare RS485 CAN Hat</div>
 
-### Data Frame Reading Test
+## 4.5 Implementation and Testing
+
+### 4.5.1 Data Frame Reading Test
 
 Sample data was successfully written and read from the FRAM.
 
@@ -202,7 +218,9 @@ Sample data was successfully written and read from the FRAM.
     <polygon points="370,243,828,243,828,384,361,384,361,401,88,401,88,261,370,261" fill="orange" opacity="30%"></polygon>
 </svg>
 
-### PIE Setup
+<div class="fig-label">Figure 4-6. Data frame reading test</div>
+
+### 4.5.2 PIE Setup
 
 The PIE was set up as per the instructions in the PIE User Guide provided by the Faraday Dragon team and the Waveshare
 RS485 CAN Hat User Guide.
@@ -210,9 +228,11 @@ RS485 CAN Hat User Guide.
 The CAN interface was tested and proven to be functional, able to both send and receive CAN frames via command line on
 the loopback interface.
 
-<img src="{{site.baseurl}}/assets/images/richard/CAN_interface_test.png" alt="CAN testing on loopback" width="800">
+<img src="{{site.baseurl}}/assets/images/richard/CAN_interface_test.png" alt="CAN testing on loopback" width="800" class="img-center">
 
-### Serial Data transfer via CAN
+<div class="fig-label">Figure 4-7. CAN testing on loopback</div>
+
+### 4.5.3 Serial Data transfer via CAN
 
 CAN frames were successfully sent and received between the PIE and the primary MCU. The
 [AA_MCP2515](https://github.com/codeljo/AA_MCP2515) library was used on the primary MCU as this library allows for
@@ -220,19 +240,25 @@ easier customisation of pinouts and changing frame IDs.
 
 <img src="{{site.baseurl}}/assets/images/richard/CAN_test_zsom-to-pie.png" alt="CAN testing on can0" width="800">
 
-### CSP Installation on PIE
+<div class="fig-label">Figure 4-8. CAN testing between ZSOM and PIE</div>
+
+### 4.5.4 CSP Installation on PIE
 
 CSP was successfully installed on the PIE, following the instructions in the documentation via the meson build system.
 Examples were successfully built and the server-client example was able to run on the loopback interface.
 
-<img src="{{site.baseurl}}/assets/images/richard/CSP_test_loopback.png" alt="CSP testing on loopback" width="600">
+<img src="{{site.baseurl}}/assets/images/richard/CSP_test_loopback.png" alt="CSP testing on loopback" width="600" class="img-center">
+
+<div class="fig-label">Figure 4-9. CSP testing on loopback</div>
 
 The same server-client example could be started on the CAN interface, but no example messages are sent when only 1
 client is on the network, so full functionality could not be verified.
 
-<img src="{{site.baseurl}}/assets/images/richard/CSP_test_can0.png" alt="CSP testing on can0" width="600">
+<img src="{{site.baseurl}}/assets/images/richard/CSP_test_can0.png" alt="CSP testing on can0" width="600" class="img-center">
 
-### CSP Installation on MCU
+<div class="fig-label">Figure 4-10. CSP testing on can0</div>
+
+### 4.5.5 CSP Installation on MCU
 
 CSP could not be installed on the primary MCU.
 
@@ -246,10 +272,12 @@ as the default build appears to rely on certain Linux system functions that do n
 There is a commit in the CSP GitHub repo that provides instructions on building a CSP example for Zephyr, but the build
 process failed.
 
-<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_commit.png" alt="commit in CSP GitHub" width="400">
-<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_build_fail.png" alt="csp fails to build">
+<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_commit.png" alt="commit in CSP GitHub" width="400" class="img-center">
+<img src="{{site.baseurl}}/assets/images/richard/CSP_zephyr_build_fail.png" alt="csp fails to build" class="img-center">
 
-## Future Work
+<div class="fig-label">Figures 4-11 and 4-12. CSP Zephyr commit and build failure</div>
+
+## 4.6 Future Work
 
 -   Hex/Bin interpreter program to convert data to human-readable format
 -   All expected functionality available via conventional CAN
