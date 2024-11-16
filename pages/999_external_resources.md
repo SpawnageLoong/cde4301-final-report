@@ -1,6 +1,8 @@
 ---
 title: External Resources
 nav_order: 999
+
+nav_exclude: true
 ---
 
 Useful links for later reference.
