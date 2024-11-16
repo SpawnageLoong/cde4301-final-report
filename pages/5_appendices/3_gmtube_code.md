@@ -1,6 +1,7 @@
 ---
 title: "Appendix C: GM Tube Signal Detection Code"
-nav_order: 6
+parent: More Appendices
+nav_order: 3
 permalink: /gmtube-code/
 last_modified_date: 16-11-2024
 ---

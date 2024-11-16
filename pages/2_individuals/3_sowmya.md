@@ -28,15 +28,15 @@ PCB Implementation of the Proposed Experiment for the Payload.
 
 ### 3.2.1 The Reason For Monitoring Bit Flips 
 
-Bits that represent either data or programs, are stored in computer memory as charge. Different memory devices deal with different levels of charge to store bits. When ionizing particle radiation strikes a material, it can alter this charge, changing 0’s to 1’s and vice versa. These flips cause corruption in both program and data memory and are called SEU. [[1]]({{site.baseurl}}/references/#1-baraniuk-c-2022-october-12-the-computer-errors-from-outer-space-bbc-link)
+Bits that represent either data or programs, are stored in computer memory as charge. Different memory devices deal with different levels of charge to store bits. When ionizing particle radiation strikes a material, it can alter this charge, changing 0’s to 1’s and vice versa. These flips cause corruption in both program and data memory and are called SEU (Baraniuk, 2022).
 
 ### 3.2.2 Bit Flip Experiments Carried Out
 
-While some microcontrollers have been in LEO, the only experiment carried out and available online is by Utah State University [[5]]({{site.baseurl}}/references/#5-olsen-w-wood-b-dennison-j-nd-microcontroller-survivability-in-space-conditions-link), but the experiment was conducted in a lab environment, and the data collected was limited. The diagram below summarizes the current state of research on bit flips in space. 
+While some microcontrollers have been in LEO, the only experiment carried out and available online is by Utah State University (Olsen et al., n.d.), but the experiment was conducted in a lab environment, and the data collected was limited. The diagram below summarizes the current state of research on bit flips in space. 
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_1.jpg" alt="state of bit flip research" width="700">
 
-<div class="fig-label">Fig 3-1.</div>
+<div class="fig-label">Fig 3-1 Bit Flip Research Summary.</div>
 
 <b>Hence, there is a gap in research about bit flips in microcontrollers in space environment. </b>
 
@@ -98,7 +98,7 @@ While data from computers can give cubesat developers a rough idea of what to ex
     <tr>
       <td>Minimum Size of Memory to count bit flips</td>
       <td>&gt;1 Kb</td>
-      <td>According to <a href="{{site.baseurl}}/references/#6-matthews-m-2021-using-bit-flips-as-a-source-of-randomness-in-cubesat-communication-encryption-acta-astronautica-179-546549-link">[6]</a>, up to 10 upsets can happen over 1kB per day. &lt;1 kB means too little information from the experiment.</td>
+      <td>Up to 10 upsets can happen over 1kB per day (Matthews, 2021). &lt;1 kB means too little information from the experiment.</td>
     </tr>
     <tr>
       <td>Maximum Size of Memory to count bit flips</td>
@@ -108,7 +108,7 @@ While data from computers can give cubesat developers a rough idea of what to ex
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-1.</div>
+<div class="fig-label">Table 3-1 Design Specification.</div>
 
 ### 3.3.3 Design Choices Reasoning
 
@@ -120,7 +120,7 @@ For each aspect of the experiment, a design choice had to be made, as elaborated
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_2.jpg" alt="bit flip measurement area selection" width="700">
 
-<div class="fig-label">Table 3-2.</div>
+<div class="fig-label">Table 3-2 Selection of Memory Device.</div>
 
 Due to the highest number of positives, the SRAM was chosen as the memory device. The one drawback, that is of data loss upon occasional latch-up events, is deemed to be worth the benefit of a simpler reset, which will be needed more often than the latch-up events.
 
@@ -151,7 +151,7 @@ The below table lists the communication peripherals on the ZSOM board and its av
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-3.</div>
+<div class="fig-label">Table 3-3 Selection of Communication Interface.</div>
 
 Due to I2C being the only interface on the ZSOM that is available for use and supports multiple devices, I2C is chosen as the communication interface between the ZSOM and the ATMegas. 
 
@@ -166,7 +166,7 @@ After applying an initial filter of SRAM sizes, availability of documentation, p
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_3.jpg" alt="microcontroller selection" width="700">
 
-<div class="fig-label">Table 3-4.</div>
+<div class="fig-label">Table 3-4 Selection of Microcontroller.</div>
 
 Hence, ATMega32U4, having the most positives, is selected as the Microcontroller under experiment.
 
@@ -213,7 +213,7 @@ Explanation of the flight heritage relevance of the ATMega328P (Appendix Section
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-5.</div>
+<div class="fig-label">Table 3-5 Selection of Other Components.</div>
 
 ### 3.3.4 Design Choices Summary
 The table below summarizes the final choices made for each component.
@@ -273,7 +273,7 @@ The table below summarizes the final choices made for each component.
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-6.</div>
+<div class="fig-label">Table 3-6 Design Choices Summary.</div>
 
 ## 3.3.5 Final Design of Experiment
 
@@ -281,7 +281,7 @@ The diagram below illustrates the working of the experiment, using the final des
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_4.jpg" alt="bit flip experiment architecture diagram" width="700">
 
-<div class="fig-label">Fig 3-2.</div>
+<div class="fig-label">Fig 3-2 Design Diagram.</div>
 
 ## 3.4 Prototyping and Testing
 
@@ -323,42 +323,11 @@ The below table describes how each aspect was implemented in the prototype.
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-7.</div>
+<div class="fig-label">Table 3-7 Implementation in Prototype.</div>
 
 Pictures and Specifics of the prototype and some verifications/characterizations are present in Appendix Section D.5
 
 ### 3.4.3 Verifications of Proof of Concepts
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Implementation in Prototype</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Central Microcontroller</td>
-      <td>SparkFun Pro Micro 3.3V, 8MHz</td>
-    </tr>
-    <tr>
-      <td>MCUs under test</td>
-      <td>2 x SparkFun Pro Micro 3.3V, 8MHz</td>
-    </tr>
-    <tr>
-      <td>PMOS Switch</td>
-      <td>SMD PMOS soldered onto veroboard + wires</td>
-    </tr>
-    <tr>
-      <td>I2C Bus</td>
-      <td>On the breadboard + wires</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="fig-label">Table 3-8.</div>
-
-### 3.4.4. Data Gathered Through Testing
 <table>
   <thead>
     <tr>
@@ -398,7 +367,56 @@ Pictures and Specifics of the prototype and some verifications/characterizations
   </tbody>
 </table>
 
-<div class="fig-label">Table 3-9.</div>
+<div class="fig-label">Table 3-8 Verifications Carried Out.</div>
+
+### 3.4.4. Data Gathered Through Testing
+<table border="1">
+  <thead>
+    <tr>
+      <th>Characteristics</th>
+      <th>Value, Unit</th>
+      <th>Within Specification?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Current Consumption of 1 Pro Micro</td>
+      <td>11 mA</td>
+      <td>Yes (Reasonable)</td>
+    </tr>
+    <tr>
+      <td>Achieved Supply Voltage for ATMega32U4s</td>
+      <td>3.29 V (min)</td>
+      <td>Yes (Nearly 3.3V)</td>
+    </tr>
+    <tr>
+      <td>Current Consumption of the Entire Prototype Circuit [Lead Pro Micro + 2 Pro Micro under Test]</td>
+      <td>33 mA</td>
+      <td>Yes (&lt;100mA)</td>
+    </tr>
+    <tr>
+      <td>Time to Receive, Count Errors and Create 10% array for 1 SRAM Dump</td>
+      <td>~1 s</td>
+      <td>See row 6</td>
+    </tr>
+    <tr>
+      <td>Time to Complete Full Operation [Receive, Count Error, Create 10% Array, Both ATMegas]</td>
+      <td>~2.3 s</td>
+      <td>See row 6</td>
+    </tr>
+    <tr>
+      <td>Time for 1 Bus Reset + 1 Power Cycle</td>
+      <td>~8 s</td>
+      <td>See row 6</td>
+    </tr>
+    <tr>
+      <td>Worst Case Time [1 Bus Reset + 1 Power Cycle + 1 Full Operation]</td>
+      <td>~10.3 s</td>
+      <td>Yes &lt;12s</td>
+    </tr>
+  </tbody>
+</table>
+<div class="fig-label">Table 3-9 Simple Characterization.</div>
 
 The expected differences in functionality of the prototype and the final PCB implementation are as follows
 <ul>

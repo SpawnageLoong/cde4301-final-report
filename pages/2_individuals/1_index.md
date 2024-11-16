@@ -2,6 +2,7 @@
 title: Individual Contributions
 nav_order: 2
 permalink: /individuals/
+has_toc: false
 ---
 
 <h1>Team Members</h1>
@@ -29,8 +30,8 @@ permalink: /individuals/
     </a>
   </div>
   <div style="width:150px">
-    <a href="{{site.baseurl}}/sarah">
-      <img src="{{site.baseurl}}/assets/images/profiles/mingchuan.png" alt="Ming Chuan" style="width:100%; border-radius:50%">
+    <a href="{{site.baseurl}}/ming-chuan">
+      <img src="{{site.baseurl}}/assets/images/profiles/mingchuan.jpg" alt="Ming Chuan" style="width:100%; border-radius:50%">
       <h2>Ming Chuan</h2>
       <p>A0240129N<br>Mechanical</p>
     </a>

@@ -1,11 +1,12 @@
 ---
-title: "Appendix D: Additional Information"
-nav_order: 7
-permalink: /appendix-d/
+title: "Appendix D: Experiment Information"
+parent: More Appendices
+nav_order: 4
+permalink: /experiment/
 last_modified_date: 16-11-2024
 ---
 
-# Additional Information
+# Experiment Information
 
 ## D.1 Reason for 1 minute Interval between Runs of the Experiment
 
