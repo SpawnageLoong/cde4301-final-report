@@ -2,6 +2,7 @@
 title: Individual Contributions
 nav_order: 2
 permalink: /individuals/
+has_toc: false
 ---
 
 <h1>Team Members</h1>

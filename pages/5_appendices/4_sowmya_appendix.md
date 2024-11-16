@@ -1,7 +1,8 @@
 ---
-title: "Appendix D: Additional Information"
-nav_order: 7
-permalink: /appendix-d/
+title: "Appendix D: Experiment Information"
+parent: More Appendices
+nav_order: 4
+permalink: /experiment/
 last_modified_date: 16-11-2024
 ---
 
