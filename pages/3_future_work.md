@@ -32,6 +32,8 @@ last_modified_date: 16-11-2024
     <td colspan="2">- Testing V1 and refine design for V2</td>
     <td>- Finalise shielding and mounting designs, send for manufacturing</td>
   <tr>
+    <td colspan="5" style="font-weight:bold; text-align: center">Milestone 1: Finalise design</td>
+  <tr>
     <td>Mid Feb</td>
     <td>- Port to RTOS</td>
     <td colspan="2">- Integrating PCB design with other electrical member</td>
@@ -41,6 +43,8 @@ last_modified_date: 16-11-2024
     <td>- Integrate all experiment code<br>- Adopt rideshare stack</td>
     <td colspan="3">- Assembly of mechanical parts with electric and software</td>
   <tr>
+    <td colspan="5" style="font-weight:bold; text-align: center">Milestone 2: Finalise integration for systems testing</td>
+  <tr>
     <td>Mid Mar</td>
     <td>- Code optimisation</td>
     <td colspan="3">- Testing the Integrated PCB V2 and final characterization<br>- Mechanical testings with ST Engineering: Vibration, Impact, Thermal<br>- Refine mechanical designs if needed</td>
@@ -48,6 +52,8 @@ last_modified_date: 16-11-2024
     <td>End Mar</td>
     <td>- Complete stress testing</td>
     <td colspan="3">- Mechanical testings with ST: Vibration, Impact, Thermal (if required)<br>- Rideshare integration</td>
+  <tr>
+    <td colspan="5" style="font-weight:bold; text-align: center">Milestone 3: Complete systems testing</td>
   <tr>
     <td>Mid Apr
     <td colspan="4">- Final Full Payload Prelaunch Checks and Admin work</td>
