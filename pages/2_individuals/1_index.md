@@ -16,7 +16,7 @@ permalink: /individuals/
   </div>
   <div style="width:150px">
     <a href="{{site.baseurl}}/sowmya">
-      <img src="{{site.baseurl}}/assets/images/profiles/sowmya.png" alt="Sowmya" style="width:100%">
+      <img src="{{site.baseurl}}/assets/images/profiles/sowmya.jpg" alt="Sowmya" style="width:100%; border-radius:50%">
       <h2>Sowmya</h2>
       <p>A0246190H<br>Electrical</p>
     </a>
