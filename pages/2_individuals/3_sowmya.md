@@ -28,11 +28,11 @@ PCB Implementation of the Proposed Experiment for the Payload.
 
 ### 3.2.1 The Reason For Monitoring Bit Flips 
 
-Bits that represent either data or programs, are stored in computer memory as charge. Different memory devices deal with different levels of charge to store bits. When ionizing particle radiation strikes a material, it can alter this charge, changing 0’s to 1’s and vice versa. These flips cause corruption in both program and data memory and are called SEU. [[1]]({{site.baseurl}}/references/#1-baraniuk-c-2022-october-12-the-computer-errors-from-outer-space-bbc-link)
+Bits that represent either data or programs, are stored in computer memory as charge. Different memory devices deal with different levels of charge to store bits. When ionizing particle radiation strikes a material, it can alter this charge, changing 0’s to 1’s and vice versa. These flips cause corruption in both program and data memory and are called SEU (Baraniuk, 2022).
 
 ### 3.2.2 Bit Flip Experiments Carried Out
 
-While some microcontrollers have been in LEO, the only experiment carried out and available online is by Utah State University [[5]]({{site.baseurl}}/references/#5-olsen-w-wood-b-dennison-j-nd-microcontroller-survivability-in-space-conditions-link), but the experiment was conducted in a lab environment, and the data collected was limited. The diagram below summarizes the current state of research on bit flips in space. 
+While some microcontrollers have been in LEO, the only experiment carried out and available online is by Utah State University (Olsen et al., n.d.), but the experiment was conducted in a lab environment, and the data collected was limited. The diagram below summarizes the current state of research on bit flips in space. 
 
 <img src="{{site.baseurl}}/assets/images/sowmya/img_1.jpg" alt="state of bit flip research" width="700">
 
@@ -98,7 +98,7 @@ While data from computers can give cubesat developers a rough idea of what to ex
     <tr>
       <td>Minimum Size of Memory to count bit flips</td>
       <td>&gt;1 Kb</td>
-      <td>According to <a href="{{site.baseurl}}/references/#6-matthews-m-2021-using-bit-flips-as-a-source-of-randomness-in-cubesat-communication-encryption-acta-astronautica-179-546549-link">[6]</a>, up to 10 upsets can happen over 1kB per day. &lt;1 kB means too little information from the experiment.</td>
+      <td>Up to 10 upsets can happen over 1kB per day (Matthews, 2021). &lt;1 kB means too little information from the experiment.</td>
     </tr>
     <tr>
       <td>Maximum Size of Memory to count bit flips</td>
