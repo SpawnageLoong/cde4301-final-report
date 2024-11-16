@@ -8,7 +8,7 @@ permalink: /sowmya/
 <div style="display:flex">
   <img src="{{site.baseurl}}/assets/images/profiles/sowmya.jpg" alt="Sowmya" width="200" style="border-radius:50%">
   <div style="margin-left: 20px">
-    <h2>Sowmya</h2>
+    <h2>Sowmya Srinivasan</h2>
     <h3>Year 4 Electrical Engineering</h3>
     <h3>A0246190H</h3>
   </div>

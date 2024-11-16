@@ -9,7 +9,7 @@ permalink: /individuals/
 <div style="margin-top:2em ;display:flex; flex-wrap:wrap; gap:32px">
   <div style="width:150px">
     <a href="{{site.baseurl}}/wei-hao">
-      <img src="{{site.baseurl}}/assets/images/profiles/weihao.png" alt="Wei Hao" style="width:100%">
+      <img src="{{site.baseurl}}/assets/images/profiles/weihao.jpg" alt="Wei Hao" style="width:100%; border-radius:50%">
       <h2>Wei Hao</h2>
       <p>A0240152X<br>Electrical</p>
     </a>
@@ -30,7 +30,7 @@ permalink: /individuals/
   </div>
   <div style="width:150px">
     <a href="{{site.baseurl}}/sarah">
-      <img src="{{site.baseurl}}/assets/images/profiles/mingchuan.png" alt="Ming Chuan" style="width:100%">
+      <img src="{{site.baseurl}}/assets/images/profiles/mingchuan.png" alt="Ming Chuan" style="width:100%; border-radius:50%">
       <h2>Ming Chuan</h2>
       <p>A0240129N<br>Mechanical</p>
     </a>
