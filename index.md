@@ -6,7 +6,10 @@ nav_order: 1
 
 # ASI-404 Galassia-5 Cubesat Interim Report
 
+<br>
 
+{: .warning}
+This page is a draft and the content is subject to change.
 
 ## Mission Background
 
