@@ -5,16 +5,52 @@ permalink: /future/
 last_modified_date: 16-11-2024
 ---
 
-# Future Work
+<h1> Future Work </h1>
 
-| Date    |  Richard  |  Wei Hao  |  Sowmya  |  Mingchuan  |
-|:--------|:----------|:----------|:---------|:------------|
-| End Dec | - Data transfer via CAN | - Procure suitable convertor<br>- V0 of High Voltage PCB<br>- GM Tube calibration with Mingchuan | - Design V0 of Experiment PCB | - Update shielding design required (top, centre, bottom) and send for prototyping<br>- GM Tube calibration with Wei Hao |
-| Mid Jan | - HEX to CSV program | - Testing V0 and refine design for V1<br>- Provide GM Tube counts to Richard to store | - Testing V0 and refine design for V1 | - Check fitting and mounting<br>- SolidWorks Analysis for vibration, shock and thermal test |
-| End Jan | - C&C via CAN | - Testing V1 and refine design for V2 | - Testing V1 and refine design for V2 | - Finalise shielding and mounting designs, send for manufacturing |
-| Mid Feb | - Port to RTOS | - Integrating PCB design with other electrical member | - Integrating PCB design with other electrical member | - SolidWorks Analysis for vibration, shock and thermal test<br>- Rideshare integration design |
-| End Feb | - Integrate all experiment code<br>- Adopt rideshare stack | - Assembly of mechanical parts with electric and software | - Assembly of mechanical parts with electric and software | - Assembly of mechanical parts with electric and software |
-| Mid Mar | - Code optimisation | - Testing the Integrated PCB V2 and final characterization | - Testing the Integrated PCB V2 and final characterization | - Mechanical testings with ST Engineering: Vibration, Impact, Thermal<br>- Refine mechanical designs if needed |
-| End Mar | - Complete stress testing | - Mechanical testings with ST: Vibration, Impact, Thermal (if required)<br>- Rideshare integration | - Mechanical testings with ST: Vibration, Impact, Thermal (if required)<br>- Rideshare integration | - Mechanical testings with ST: Vibration, Impact, Thermal (if required)<br>- Rideshare integration |
-| Mid Apr | - Final Full Payload Prelaunch Checks and Admin work | - Final Full Payload Prelaunch Checks and Admin work | - Final Full Payload Prelaunch Checks and Admin work | - Final Full Payload Prelaunch Checks and Admin work |
-| End Apr | - FYP Presentation and Waiting for Launch | - FYP Presentation and Waiting for Launch | - FYP Presentation and Waiting for Launch | - FYP Presentation and Waiting for Launch |
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Richard</th>
+    <th>Wei Hao</th>
+    <th>Sowmya</th>
+    <th>Mingchuan</th>
+  <tr>
+    <td>End Dec</td>
+    <td>- Data transfer via CAN</td>
+    <td>- Procure suitable convertor<br>- V0 of High Voltage PCB<br>- GM Tube calibration with Mingchuan</td>
+    <td>- Design V0 of Experiment PCB</td>
+    <td>- Update shielding design required (top, centre, bottom) and send for prototyping<br>- GM Tube calibration with Wei Hao</td>
+  <tr>
+    <td>Mid Jan</td>
+    <td>- HEX to CSV program</td>
+    <td>- Testing V0 and refine design for V1<br>- Provide GM Tube counts to Richard to store</td>
+    <td>- Testing V0 and refine design for V1</td>
+    <td>- Check fitting and mounting<br>- SolidWorks Analysis for vibration, shock and thermal test</td>
+  <tr>
+    <td>End Jan</td>
+    <td>- C&C via CAN</td>
+    <td colspan="2">- Testing V1 and refine design for V2</td>
+    <td>- Finalise shielding and mounting designs, send for manufacturing</td>
+  <tr>
+    <td>Mid Feb</td>
+    <td>- Port to RTOS</td>
+    <td colspan="2">- Integrating PCB design with other electrical member</td>
+    <td>- SolidWorks Analysis for vibration, shock and thermal test<br>- Rideshare integration design</td>
+  <tr>
+    <td>End Feb</td>
+    <td>- Integrate all experiment code<br>- Adopt rideshare stack</td>
+    <td colspan="3">- Assembly of mechanical parts with electric and software</td>
+  <tr>
+    <td>Mid Mar</td>
+    <td>- Code optimisation</td>
+    <td colspan="3">- Testing the Integrated PCB V2 and final characterization<br>- Mechanical testings with ST Engineering: Vibration, Impact, Thermal<br>- Refine mechanical designs if needed</td>
+  <tr>
+    <td>End Mar</td>
+    <td>- Complete stress testing</td>
+    <td colspan="3">- Mechanical testings with ST: Vibration, Impact, Thermal (if required)<br>- Rideshare integration</td>
+  <tr>
+    <td>Mid Apr
+    <td colspan="4">- Final Full Payload Prelaunch Checks and Admin work</td>
+  <tr>
+    <td>End Apr</td>
+    <td colspan="4">- FYP Presentation and Waiting for Launch</td>
