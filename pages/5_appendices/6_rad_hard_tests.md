@@ -87,5 +87,7 @@ These are test results provided by Zero Error Systems.
   </tr>
 </table>
 
+<div class="fig-label">Table F-1. Findings from tests</div>
+
 It is observed from the testing that the ZSOM-M01 is resistant to damage from high levels of radiation. In addition to this, its various protection systems are immune from lasting damage, especially for the Quad-Channel Voter in for SEL and LDAP with SEE. This means that even if the microcontroller experiences SEE events from the high-energy particles in the Van Allen Belt, it can be reset reliably to remove the error. 
 
