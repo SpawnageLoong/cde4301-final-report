@@ -118,6 +118,8 @@ We aim to design a radiation measurement payload that allows for the characteriz
 
 The data gathered by our payload can be used to develop lower-cost solutions for managing SEE, and the shielding used on our payload can be validated for future flights. These lower-cost solutions can then give other CubeSats developers more freedom in their development cycle.
 
+We will be able to collect two different sets of data, one set with no shielding, another set with shielding. Then we will compare this data with the uncorrupted data to find out the damage and effectiveness of shielding.
+
 We will also be able to provide rideshare providers with more insights into the effects of SEE on rideshare satellites and their client payloads.
 
 We aim to fly our payload through the South Atlantic Anomaly, which is known for its high radiation levels (Meier et al., 2023). This will allow us to assess the conduct of our experiment under some of the most challenging radiation conditions

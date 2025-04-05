@@ -47,11 +47,9 @@ The main objectives of my part of the project include:
 
 The primary design requirement for my part is to ensure that our payload can be integrated with the parent satellite. Therefore, the specifications I have to meet are entirely dependent on our rideshare partner.
 
-At the time of writing this report, our team does not have a confirmed rideshare partner yet. As such, I do not have a finalised list of specifications that I can use to base my design choices on. However, we do have a technical partnership with In-Space Missions, which is a subsidiary of BAE Systems, and their Faraday Dragon program.
+At the time of writing this report, our team does not have a confirmed rideshare partner yet. As such, there is no finalised list of specifications. However, we do have a technical partnership with In-Space Missions, which is a subsidiary of BAE Systems, and their Faraday Dragon program.
 
-Through this partnership, I have access to some of the specifications and documents for the Faraday Dragon spacecraft such as their Payload Integration Emulator (PIE) user guide and their Interface Control Document (ICD). Additionally, there are active communication channels between us and the Faraday Dragon team.
-
-Therefore, I am basing many of my design choices on the Faraday Dragon spacecraft's integration requirements. However, some details such as mission parameters are still not determinable as there is not a specific mission to base our experiments on.
+Through this partnership, I have access to some of the specifications and documents for the Faraday Dragon spacecraft such as their Payload Integration Emulator (PIE) user guide and their Interface Control Document (ICD). Therefore, I am basing many of my design choices on the Faraday Dragon spacecraft's integration requirements.
 
 ## 4.4 Design Choices
 
@@ -67,47 +65,11 @@ Each experiment reading will be stored as a single data frame.
 | Epoch Time | Particle Count | Error Count #1 | Error Count #2 | Experiment Data #1 | Experiment Data #2 |
 |:-----------|:---------------|:---------------|:---------------|:-------------------|:-------------------|
 | 4 bytes    | 4 bytes        | 2 bytes        | 2 bytes        | 256 bytes          | 256 bytes          |
-| signed int | unsigned int   | unsigned int   | unsigned int   | byte[ ]            | byte[ ]            |
+| signed int | unsigned int   | unsigned int   | unsigned int   | byte literals      | byte literals      |
 
 <div class="fig-label">Table 4-1. Custom data frame structure</div>
 
-#### Epoch Time
-
-The time the reading was taken. This timestamp is retrieved from the parent satellite as our payload has no onboard clock.
-
-We are using Unix epoch time conventions, based on the epoch of 1 Jan 1970, 0000hrs UTC/GMT. Unix epoch is widely implemented in software libraries, making it the most convenient epoch time to use. The Year 2038 problem that comes with the Unix epoch is unlikely to be an issue as we expect our mission to have ended by then.
-
-The epoch time is stored as a 32-bit (4-byte) signed integer.
-
-#### Particle Count
-
-The number of particles counted by the Geiger–Müller (GM) tube. This is measured in counts-per-minute (CPM).
-
-The particle count is stored as a 32-bit (4-byte) unsigned integer.
-
-#### Error Counts
-
-The number of bit flips detected in each MCU's SRAM.
-
-The ATmega32U4 MCU has 2.5kB of SRAM, which is 20480 bits, which fits comfortably in a 16-bit data type so even in the event that every single bit flips, all errors can be counted.
-
-The error count is stored as a 16-bit (2-byte) unsigned integer for each MCU.
-
-#### Experimental Data
-
-This is the data that scientists can use for research beyond the scope of our project.
-
-We are taking a 10% sample of each MCU's SRAM, which is 256 bytes. This is a good compromise between data size and data integrity. The data is stored as a byte array of 256 bytes.
-
 ### 4.4.2 Electrical Interfaces
-
-The electrical interfaces are the electrical connections between the payload and the parent satellite. These include power delivery and communications. There are a total of 6 pins needed for this interface:
-
-- Low Voltage (LV) power delivery: 5V and GND
-- High Voltage (HV) power delivery: 5V and GND
-- Communications: CAN H and CAN L
-
-The LV and HV components are on separate PCBs for isolation, and are preferably on separate power delivery circuits for the same reason.
 
 2 different physical interfaces are being developed that can be toggled between before launch in order to accommodate possible rideshare requirements. A jumper will be used to select between the two interfaces. The unused interface will be electrically disconnected from the rest of the payload.
 
@@ -140,7 +102,7 @@ For rideshares without the PC104 pinstack, the picoblade connector will be used.
 
 <div class="fig-label">Figure 4-3. Molex Picoblade connectors</div>
 
-### 4.4.3 Communication Protocol (Layer 2)
+### 4.4.3 Communication Protocol
 
 CAN is being used as the layer 2 communications protocol. It is widely used and is one of the protocols used by the Faraday Dragon rideshare. The primary MCU (ZSOM) does not have any onboard CAN hardware, so an external module is needed.
 
@@ -152,7 +114,7 @@ The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050 and the
 
 ### 4.4.4 Communication Protocol (Layers 3+)
 
-Cubesat Space Protocol (CSP) is used as the higher layer communications protocol in the Faraday Dragon spacecraft. However, since we have no confirmed rideshare partner, we have opted not to implement CSP as there is no readily available package for microcontrollers, and would require a lot more time to port it than we have.
+Cubesat Space Protocol (CSP) is used in the Faraday Dragon spacecraft. However, since we have no confirmed rideshare partner, we have opted not to implement CSP as there is no readily available package for microcontrollers.
 
 Instead, a custom protocol that is simpler in implementation has been developed.
 
@@ -274,40 +236,26 @@ The following response frames from the payload controller are available:
 </table>
 <div class="fig-label">Table 4-5. Response Frames</div>
 
-For single frames, sequence is unimportant. However for large amounts of data, the order of the frames is important, so the memory address of the data is attached to each word so the entirety of the payload controller’s FRAM can be recreated later.
+<img src="{{site.baseurl}}/assets/images/richard/4.5-dump-sample.png" alt="Sample of data dumped" width="800">
+
+<div class="fig-label">Figure 4-7. Sample of data dumped from controller</div>
 
 ## 4.6 Implementation and Testing
 
-### 4.6.1 Data Frame Reading Test
-
-Sample data was successfully written and read from the FRAM.
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 835 423">
-  <image width="835" height="423" xlink:href="{{site.baseurl}}/assets/images/richard/data_frame_test.png"></image>
-    <rect x="88" y="98" fill="red" opacity="30%" width="84" height="15"></rect>
-    <rect x="181" y="98" fill="green" opacity="30%" width="84" height="15"></rect>
-    <rect x="276" y="98" fill="blue" opacity="30%" width="48" height="15"></rect>
-    <rect x="324" y="98" fill="yellow" opacity="30%" width="35" height="15"></rect>
-    <polygon points="370,97,828,97,828,240,361,240,361,257,88,257,88,116,370,116" fill="purple" opacity="30%"></polygon>
-    <polygon points="370,243,828,243,828,384,361,384,361,401,88,401,88,261,370,261" fill="orange" opacity="30%"></polygon>
-</svg>
-
-<div class="fig-label">Figure 4-6. Data frame reading test</div>
-
-### 4.6.2 Emulator Setup
+### 4.6.1 Emulator Setup
 
 Any device running Linux with an available USB port can be used as the emulator. Plugging in the USB-CAN-A into a USB port should make the device available as a virtual device `/dev/ttyUSB0`. The number might change depending on the USB port used. Once the virtual device is detected, it is ready to use.
 
-### 4.6.3 Serial Data transfer via CAN
+### 4.6.2 Serial Data transfer via CAN
 
 CAN frames were successfully sent and received between the PIE and the primary MCU. The  
 [AA_MCP2515](https://github.com/codeljo/AA_MCP2515) library was used on the primary MCU as this library allows for easier customisation of pinouts and changing frame IDs. 
 
 <img src="{{site.baseurl}}/assets/images/richard/CAN_test_zsom-to-pie.png" alt="CAN testing on can0" width="800">
 
-<div class="fig-label">Figure 4-7. CAN testing between ZSOM and PIE</div>
+<div class="fig-label">Figure 4-8. CAN testing between ZSOM and PIE</div>
 
-### 4.6.4 Implementation of RTC
+### 4.6.3 Implementation of RTC
 
 A time-keeping service is required for our experiments to have access to accurate time information. Timekeeping data can usually be obtained from a parent satellite via a heartbeat signal or the satellite’s timekeeping service, but we do not have a confirmed parent satellite. Thus I decided to use the Real-Time Clock (RTC) available in the SAMD21 microprocessor as the primary timekeeping system. 
 
@@ -315,7 +263,7 @@ The ZSOM does not have any onboard battery to ensure the RTC could run continuou
 
 The [RTCZero library](https://github.com/arduino-libraries/RTCZero) by Arduino is used to control the RTC.
 
-### 4.6.5 Command and Control (C&C) via CAN
+### 4.6.4 Command and Control (C&C) via CAN
 
 C&C is implemented using an interrupt service routine (ISR) that is triggered by the CAN controller. The ISR is triggered when a CAN frame is received. The ISR will then read the frame and update a global variable with the command ID. The main loop will then check the global variable and execute the command. The ISR will ignore commands if the previous command is still being executed.
 
@@ -325,9 +273,9 @@ The emulator is able to run on any device with a USB port and an Ubuntu-based op
 
 <img src="{{site.baseurl}}/assets/images/richard/4.6.5-emulator.png" alt="Emulator program" width="600" class="img-center">
 
-<div class="fig-label">Figure 4-8. Emulator program</div>
+<div class="fig-label">Figure 4-9. Emulator program</div>
 
-### 4.6.6 Integration of Software
+### 4.6.5 Integration of Software
 
 Each individual team member is responsible for writing their own software for their respective subsystems. Once the proof of concept is complete and has been tested, each piece of software is handed over to me for integration into a single software package. This requires adapting the software to resolve any conflicts between the software, such as pin conflicts, and ensuring that the software can run on a single microcontroller. Some software may also need to be rewritten to ensure that it can run on the SAMD21 as it has a different architecture from the ATmegas used in more common Arduino boards.
 
@@ -357,7 +305,7 @@ Changes to the SRAM experiment program include:
 - Addition of a delay to prevent the program from reading the SRAM too quickly, which can cause the handshake signal to be missed.
 - Integration with the FRAM library to allow for the SRAM experiment to store the count and samples in the FRAM.
 
-### 4.6.7 Utilities and Tools
+### 4.6.6 Utilities and Tools
 
 A set of utility scripts was developed in Python to help with the processing and analysis of the data gathered by the payload. These scripts convert the hexadecimal data into human-readable CSV files.
 
@@ -372,6 +320,10 @@ This script takes the csv file generated by the previous script and converts it 
 #### 3-merge-csv.py
 
 This script takes the csv files generated by the previous script and the data from the thermal testing chamber and merges them into a single csv file. This is useful for comparing the data against the environment temperature.
+
+<img src="{{site.baseurl}}/assets/images/richard/4.6.6-processed-data.png" alt="Sample of processed data" width="600" class="img-center">
+
+<div class="fig-label">Figure 4-10. Sample of processed data</div>
 
 ## 4.7 Testing Setup and Procedures
 
@@ -405,6 +357,10 @@ The minimal testing setup consists of the payload and the emulator. The payload 
 
 Before sending the payload for environmental testing, a long duration test was conducted to ensure that the payload was functioning correctly over an extended period of time. The payload was powered on and a test cycle was run every hour for 72 hours.
 
+<img src="{{site.baseurl}}/assets/images/richard/4.7.4-test.jpg" alt="Testing the payload" width="600" class="img-center">
+
+<div class="fig-label">Figure 4-11. Long Duration Test</div>
+
 The payload was able to run successfully for 19 hours before the raspberry pi power supply began malfunctioning, causing the payload to behave erratically. The power for the payload was supplied by the Raspberry Pi, which was powered by a 5V 4A power supply. Due to the power supply issues, the test was unable to run for the full 72 hours.
 
 After replacing the power supply for the payload with a benchtop power supply and the Raspberry Pi power supply with an iPad charger, the payload was able to run without any issues. The payload was able to read and write to the FRAM without any issues, and the GM Counter was able to count particles without any issues.
@@ -424,25 +380,29 @@ The payload was not powered on during the vibration testing. After the testing w
 
 <img src="{{site.baseurl}}/assets/images/richard/4.8.1-testing.jpg" alt="Testing the payload" width="600" class="img-center">
 
-<div class="fig-label">Figure 4-9. Testing after vibration tests</div>
+<div class="fig-label">Figure 4-12. Testing after vibration tests</div>
 
 ### 4.8.2 Thermal Testing
 
 Thermal testing was conducted to simulate the conditions the payload would experience in space. The payload was subjected to a series of temperature cycles to identify the thermal limits of the payload. Each cycle would bring the temperature down to either -30°C or -25°C, hold that low temperature for 4 hours, transition to 70°C and hold for another 4 hours. It was subject to two cycles, taking over 16 hours to complete. The payload was powered on during the thermal testing.
 
-<img src="{{site.baseurl}}/assets/images/richard/4.8.2-thermotron.jpg" alt="Waveshare USB-CAN-A" width="400" class="img-center">
+<img src="{{site.baseurl}}/assets/images/richard/4.8.2-thermotron.jpg" alt="Temperatures reach -29°C" width="400" class="img-center">
 
-<div class="fig-label">Figure 4-10. Temperatures reach -29°C</div>
+<div class="fig-label">Figure 4-13. Temperatures reach -29°C</div>
 
 The test cycles were run overnight. The payload was able to successfully complete the test cycle without any issues. The payload was able to read and write to the FRAM without any issues, and the GM Counter was able to count particles without any issues. The payload was able to successfully complete the test cycle without any issues. However, the testing equipment failed multiple times, requiring the test to be performed multiple times.
 
-<img src="{{site.baseurl}}/assets/images/richard/4.8.2-setup.jpg" alt="Waveshare USB-CAN-A" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/richard/4.8.2-chamber.jpg" alt="Payload inside thermal chamber" width="600" class="img-center">
 
-<div class="fig-label">Figure 4-11. Testing equipment next to thermal chamber</div>
+<div class="fig-label">Figure 4-14. Payload inside thermal chamber</div>
 
 ### 4.8.3 Test equipment failure
 
 During the first attempt at thermal testing, the payload was able to read and write to the FRAM without any issues, and the GM Counter was able to count particles without any issues. However, the Raspberry Pi began malfunctioning at the 7 hour mark, causing the test data to be lost after that point. When we checked on the payload, the Raspberry Pi was powered on, but the data from the payload was missing. 
+
+<img src="{{site.baseurl}}/assets/images/richard/4.8.2-setup.jpg" alt="Testing equipment" width="600" class="img-center">
+
+<div class="fig-label">Figure 4-15. Testing equipment next to thermal chamber</div>
 
 Checking the system logs on the Raspberry Pi revealed that it had shutdown at the 7 hour mark, only powering back on just before we arrived at the lab, well past the intended 16 hour test. Further investigation revealed that the power supply was not providing enough current to the Raspberry Pi, triggering undervoltage warnings and causing it to behave erratically, eventually shutting down.
 
@@ -455,3 +415,14 @@ The Raspberry Pi was replaced with a laptop and the payload was powered on again
 All three attempts at thermal testing showed that the payload was able to handle repeated exposure to extreme temperatures. The payload was able to read and write to the FRAM without any issues, and the GM Counter was able to count particles without any issues.
 
 The data from the successfult thermal test was run through the three utility scripts to convert the data into a more useful format. The data was then merged with the temperature data from the thermal chamber to create a single CSV file that contains all the data from the test. The data showed that the payload worked correctly throughout the test, with little change in the GM Counter readings.
+
+## 4.9 Conclusion
+
+The payload controller has been successfully developed and tested. The payload controller is able to read and write to the FRAM without any issues, and the GM Counter is able to count particles without any issues in both normal and extreme conditions. The payload controller is able to communicate with the parent satellite via the CAN interface, and the payload controller is able to receive commands from the parent satellite. The payload controller is able to run for extended periods of time without any issues, and the payload controller is able to handle extreme temperatures without any issues.
+
+However, the payload software still has further improvements that can be made. These include:
+
+- More communication originating from the payload controller such as indications for a full FRAM
+- Updating system parameters over CAN
+
+Furthermore, steps have to be taken to integrate the payload with the parent satellite. Oncea rideshare partner is confirmed, the payload controller will be updated to meet the requirements of the parent satellite. This includes updating the communication protocol to match the parent satellite's requirements, and updating the electrical interfaces to match the parent satellite's requirements. The payload controller will also be updated to include any additional features that the parent satellite offers such as a timekeeping service or a heartbeat signal.
