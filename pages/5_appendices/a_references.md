@@ -1,7 +1,9 @@
 ---
 title: "Appendix A: References"
-nav_order: 4
+parent: Appendices
+nav_order: 1
 permalink: /references/
+last_modified_date: 05-04-2025
 ---
 
 # References

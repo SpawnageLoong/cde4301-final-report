@@ -1,6 +1,6 @@
 ---
 title: "Appendix E"
-parent: More Appendices
+parent: Appendices
 nav_order: 5
 permalink: /appendix-e/
 last_modified_date: 05-04-2025

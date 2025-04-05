@@ -206,7 +206,7 @@ We ran a static loading test to replicate the gravitational forces experienced d
 
 <div class="fig-label">Figure 5-12. Static Load Profile</div>
 
-<img src="{{site.baseurl}}/assets/images/mingchuan/5-13.png" alt="Static Load" width="300" class="img-center">
+<img src="{{site.baseurl}}/assets/images/mingchuan/5-13.png" alt="Static Load" width="600" class="img-center">
 
 <div class="fig-label">Figure 5-13. Stress and displacement on the module</div>
 
