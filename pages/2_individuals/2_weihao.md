@@ -352,7 +352,7 @@ The LED blinks whenever a new pulse appears on the oscilloscope screen, and it t
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig24.jpg" alt="Current drawn" width="600" class="img-center">
 
-<p align="center"><strong>Fig 2-25 Current drawn by the high-voltage PCB (left) and the low-voltage PCb (right) </strong></p>
+<p align="center"><strong>Fig 2-25 Current drawn by the high-voltage PCB (left) and the low-voltage PCB (right) </strong></p>
 
 The high voltage PCB consumed between 0.086A to 0.14A. This, combined with the current drawn by the low-voltage PCB of between 0.026A to 0.032A, is lower than the 2A limit for our payload. Hence the 2A current supply limit is satisfied. 
 
