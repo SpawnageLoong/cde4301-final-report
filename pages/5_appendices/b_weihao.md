@@ -10,8 +10,7 @@ last_modified_date: 05-04-2025
 
 ### Design Choice
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b1/zsom.png" alt="ZSOM Microcontroller" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B1/Fig 1.png" alt="ZSOM Microcontroller" width="500" class="img-center">
 
 <div class="fig-label">Fig B1-1. ZSOM-M01 board (Zero Error Systems, 2024b)</div>
 
@@ -222,3 +221,17 @@ TODO: IMAGE
 <img src="{{site.baseurl}}/assets/images/appendix-b4/lowpass2.png" alt="Low Pass Filter" width="500">
 
 Lowpass filter (C1) to clean up signal for reading.
+
+## Appendix B5: PCB Design Iterations
+
+The PCB underwent multiple prototype designs to test assumptions and hypotheses, as well as ensure alignment of specifications between the other teammates. The iterations are listed below
+
+### Iteration 1
+
+Place all components on 10cm by 10cm PCB to check for sizing and possible component positioning.
+
+TODO: IMAGE
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/intro/img_1.jpg" alt="Galassia-2 housekeeping log 1" width="350">
+  <img src="{{site.baseurl}}/assets/images/intro/img_2.jpg" alt="Galassia-2 housekeeping log 2" width="350">
+</div>
