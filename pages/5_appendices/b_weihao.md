@@ -137,13 +137,11 @@ Geiger-Müller (GM) tubes are preferred in our project to provide radiation data
 
 ### Design Proposition
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b2/gm-tube.png" alt="GM Tube" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 1.png" alt="GM Tube" width="500" class="img-center">
 
 <div class="fig-label">Fig B2-1. LND712 GM Tube (LND. Inc., n.d.)</div>
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b2/gm-tube-setup.png" alt="GM Tube Setup" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 2.png" alt="GM Tube Setup" width="500" class="img-center">
 
 <div class="fig-label">Fig B2-2. Recommended wiring for LND712 (LND. Inc., n.d.)</div>
 
@@ -155,24 +153,19 @@ The LND 712 is chosen for our purposes. It requires between 450 to 650V to opera
 
 Reference was taken from a tutorial on Sparkfun on assembling the circuit components.
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b3/circuit1.png" alt="Circuit Layout" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 1.png" alt="Circuit Layout" width="500" class="img-center">
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b3/circuit2.png" alt="Circuit Layout" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 2.png" alt="Circuit Layout" width="500" class="img-center">
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b3/circuit3.png" alt="Circuit Layout" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 3.png" alt="Circuit Layout" width="500" class="img-center">
 
 <div class="fig-label">Figs B3-1, B3-2, B3-3. Reference circuit taken from Sparkfun tutorial (bitsmashed, 2009)</div>
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b3/prototype.png" alt="Circuit Layout" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 5.png" alt="Circuit Layout" width="500" class="img-center">
 
 <div class="fig-label">Fig B3-4. Prototype circuit</div>
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b3/readings.png" alt="Circuit Layout" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 6.png" alt="Circuit Layout" width="500" class="img-center">
 
 <div class="fig-label">Fig B3-5. Readings from the prototype circuit</div>
 
@@ -189,36 +182,31 @@ Following form this experiment, further optimizing the circuit components, espec
 
 The high voltage circuit is made of the following parts:
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b4/lowpass.png" alt="Low Pass Filter" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 21.png" alt="Low Pass Filter" width="500" class="img-center">
 
 <div class="fig-label">Fig B4-1. First Low Pass Filter</div>
 
 Lowpass Filter (R1 and C0) to prevent signals from interfering with the source.
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b4/highpass.png" alt="High Pass Filter" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 2.png" alt="High Pass Filter" width="500" class="img-center">
 
 <div class="fig-label">Fig B4-2. High Pass Filter</div>
 
 Highpass Filter (R0 and C0) to filter signals towards the microcontroller.
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b4/currentamp.png" alt="Current Amplifier" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 3.png" alt="Current Amplifier" width="500" class="img-center">
 
 <div class="fig-label">Fig B4-3. Current Amplifier</div>
 
 Current amplifier (Q0 and R3) to amplify the current of signals to be identified by the microcontroller.
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b4/pullup.png" alt="Pull Up" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 4.png" alt="Pull Up" width="500" class="img-center">
 
 <div class="fig-label">Fig B4-4. Pull Up</div>
 
 A 3.3V pull-up (R4) to bring the signal line to 3V3 if the line is floating.
 
-TODO: IMAGE
-<img src="{{site.baseurl}}/assets/images/appendix-b4/lowpass2.png" alt="Low Pass Filter" width="500">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 5.png" alt="Low Pass Filter" width="500" class="img-center">
 
 Lowpass filter (C1) to clean up signal for reading.
 
@@ -228,10 +216,150 @@ The PCB underwent multiple prototype designs to test assumptions and hypotheses,
 
 ### Iteration 1
 
-Place all components on 10cm by 10cm PCB to check for sizing and possible component positioning.
+- Place all components on 10cm by 10cm PCB to check for sizing and possible component positioning.
 
-TODO: IMAGE
 <div style="display:flex; gap:2em">
-  <img src="{{site.baseurl}}/assets/images/intro/img_1.jpg" alt="Galassia-2 housekeeping log 1" width="350">
-  <img src="{{site.baseurl}}/assets/images/intro/img_2.jpg" alt="Galassia-2 housekeeping log 2" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 1 front.png" alt="Iteration 1 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 1 back.png" alt="Iteration 1 Back" width="350">
 </div>
+
+<div class="fig-label">Fig B5-1. Iteration 1 PCB design</div>
+
+### Iteration 2
+
+- Add ground plane clearance around the high voltage lines.
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 2 front.png" alt="Iteration 2 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 2 back.png" alt="Iteration 2 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-2. Iteration 2 PCB design</div>
+
+### Iteration 3
+
+- Introduced desired shape of the PCB for fit check with shielding and alignment check of the mounting holes.
+- Pinstack was modeled as a rectangular hole to ensure that shielding did not obstruct the pinstack location.
+- Non-plated through-holes were designed to the sides of the GM tube footprint for cable-ties to loop through and bound the GM tube to the PCB.
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 3 front.png" alt="Iteration 3 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 3 back.png" alt="Iteration 3 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-3. Iteration 3 PCB design</div>
+
+### Iteration 4
+
+- Add pinstack footprint and sizing for fit check with mechanical.
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 4 front.png" alt="Iteration 4 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 4 back.png" alt="Iteration 4 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-4. Iteration 4 PCB design</div>
+
+### Iteration 5
+
+- Converter was updated to a space suitable one and shifted to be closer to the GM tube to shorten the high voltage lines. 
+- Pinstack footprint was changed to reflect the actual 52 position pinstack we will be using, rather than two 26 position pinstacks per row. 
+- Conducted pinstack alignment check with low voltage PCB.
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 5 front.png" alt="Iteration 5 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 5 back.png" alt="Iteration 5 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-5. Iteration 5 PCB design</div>
+
+### Iteration 6
+
+- PCB colour changed to black to reflect the final colour choice.
+- Finalised relative positioning of components.
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 6 front.png" alt="Iteration 6 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 6 back.png" alt="Iteration 6 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-6. Iteration 6 PCB design</div>
+
+### Iteration 7
+
+- Edited converter footprint.
+- Edited capacitor value on lowpass filter on signal net 
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 7 front.png" alt="Iteration 7 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 7 back.png" alt="Iteration 7 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-7. Iteration 7 PCB design</div>
+
+### Iteration 8
+
+- Final check on all components placement and traces. 
+- Shifted the converter closer to the shielding for better thermal contact between converter thermal interface material, and shielding
+
+<div style="display:flex; gap:2em">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 8 front.png" alt="Iteration 8 Front" width="350">
+  <img src="{{site.baseurl}}/assets/images/appendix_b/B5/iteration 8 back.png" alt="Iteration 8 Back" width="350">
+</div>
+
+<div class="fig-label">Fig B5-8. Iteration 8 PCB design</div>
+
+## Appendix B6: Microcontroller Code
+
+The code attaches an interrupt service provider to pin D4 and configures it to be in input pull mode. The D4 pin will be triggered by the falling edge of the signal from the GM tube. When the pin is triggered, the microcontroller counts the pulse. After 1 minute, the microcontroller resets the count to 0 for the next minute. A debouncer is added to ensure that the microcontroller does not count unstable signals multiple times. 
+
+The code is as follows:
+```cpp
+volatile int count = 0;
+volatile unsigned long lastInterruptTime = 0;
+uint32_t start;
+
+
+void setup() {
+  pinMode(4, INPUT_PULLUP);  
+  Serial.begin(9600);      
+
+
+  Serial.println("Start");
+
+
+  // Attach interrupt on pin 2 (Interrupt 0) for falling edge detection
+  attachInterrupt(digitalPinToInterrupt(4), handleInterrupt, FALLING);
+  start = micros();
+}
+
+
+void loop() {
+  // Check if 1 second has passed
+  if (micros() - start >= 60000000) {  // 1,000,000 µs = 1 second
+    Serial.print("Counts per min: ");
+    Serial.println(count);  
+
+
+    // Reset count for the next second
+    count = 0;  
+    // Reset start time      
+    start = micros();  
+    interrupts();
+  }
+}
+
+
+// Interrupt Service Routine (ISR)
+void handleInterrupt() {
+  unsigned long interruptTime = micros();
+
+
+  // Debounce: Only count if >200 microseconds have passed since last pulse
+  if (interruptTime - lastInterruptTime > 10000) {
+    //Serial.println("Detected!");
+    count++;
+    lastInterruptTime = interruptTime;
+  }
+}
+```
