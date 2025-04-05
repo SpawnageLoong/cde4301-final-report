@@ -474,7 +474,9 @@ Check for overheating
 ## Appendix E10: Test Results
 
 Vibration results before thermal cycle: [Link]({{site.baseurl}}/assets/files/appendix_e/1_vibration_before_thermal.zip)
+
 Thermal cycle data: [Link]({{site.baseurl}}/assets/files/appendix_e/2_thermal_data.zip)
+
 Vibration results after thermal cycle: [Link]({{site.baseurl}}/assets/files/appendix_e/3_vibration_after_thermal.zip)
 
 ## Appendix E11: Usable area of PCB and Size of Components
