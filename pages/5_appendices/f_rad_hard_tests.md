@@ -1,9 +1,9 @@
 ---
 title: "Appendix F: Radiation-Hardening Tests for ZSOM-M01"
-parent: More Appendices
+parent: Appendices
 nav_order: 6
-permalink: /rad-hard/
-last_modified_date: 16-11-2024
+permalink: /appendix-f/
+last_modified_date: 05-04-2025
 ---
 
 # Radiation-Hardening Tests for ZSOM-M01
