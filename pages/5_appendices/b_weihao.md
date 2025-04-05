@@ -1,6 +1,6 @@
 ---
 title: "Appendix B"
-parent: More Appendices
+parent: Appendices
 nav_order: 2
 permalink: /appendix-b/
 last_modified_date: 05-04-2025

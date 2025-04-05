@@ -1,5 +1,5 @@
 ---
-title: More Appendices
+title: Appendices
 nav_order: 5
 permalink: /appendices/
 ---

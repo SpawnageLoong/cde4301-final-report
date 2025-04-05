@@ -1,6 +1,6 @@
 ---
 title: "Appendix D"
-parent: More Appendices
+parent: Appendices
 nav_order: 4
 permalink: /appendix-d/
 last_modified_date: 05-04-2025

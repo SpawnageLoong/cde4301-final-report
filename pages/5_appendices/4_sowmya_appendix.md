@@ -1,6 +1,6 @@
 ---
 title: "Appendix D: Experiment Information"
-parent: More Appendices
+parent: Appendices
 nav_order: 4
 permalink: /experiment/
 last_modified_date: 16-11-2024
