@@ -10,7 +10,7 @@ last_modified_date: 05-04-2025
 
 ### Design Choice
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B1/Fig 1.png" alt="ZSOM Microcontroller" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B1/Fig 1.jpg" alt="ZSOM Microcontroller" width="500" class="img-center">
 
 <div class="fig-label">Fig B1-1. ZSOM-M01 board (Zero Error Systems, 2024b)</div>
 
@@ -137,7 +137,7 @@ Geiger-Müller (GM) tubes are preferred in our project to provide radiation data
 
 ### Design Proposition
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 1.jpg" alt="GM Tube" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B2/Fig 1.jpg" alt="GM Tube" width="500" class="img-center">
 
 <div class="fig-label">Fig B2-1. LND712 GM Tube (LND. Inc., n.d.)</div>
 
