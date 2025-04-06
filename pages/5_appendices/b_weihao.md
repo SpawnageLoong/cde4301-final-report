@@ -137,11 +137,11 @@ Geiger-Müller (GM) tubes are preferred in our project to provide radiation data
 
 ### Design Proposition
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 1.png" alt="GM Tube" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 1.jpg" alt="GM Tube" width="500" class="img-center">
 
 <div class="fig-label">Fig B2-1. LND712 GM Tube (LND. Inc., n.d.)</div>
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 2.png" alt="GM Tube Setup" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B2/fig 2.jpg" alt="GM Tube Setup" width="500" class="img-center">
 
 <div class="fig-label">Fig B2-2. Recommended wiring for LND712 (LND. Inc., n.d.)</div>
 
