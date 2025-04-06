@@ -110,7 +110,7 @@ Only the ZSOM-M01 microcontroller and the GM tube persisted into the final desig
 
 <b>Design Choice</b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig1.png" alt="ZSOM-M01 board" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig1.jpg" alt="ZSOM-M01 board" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-2  ZSOM-M01 board (Zero Error Systems, 2024b)</strong></p>
 
@@ -120,7 +120,7 @@ The detailed explanation was discussed in the interim, and it can be found in ap
 
 <b>Design Implementation</b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig2.png" alt="Pinout of ZSOM-M01" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig2.jpg" alt="Pinout of ZSOM-M01" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-3 Pinout of ZSOM-M01 (Zero Error Systems, 2024b)</strong></p>
 
@@ -136,7 +136,7 @@ Geiger-Müller (GM) tubes remained on the final design as it could provide robus
 
 <b>Design Implementation</b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig3.png" alt="LND712 GM Tube" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig3.jpg" alt="LND712 GM Tube" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-4 LND712 GM Tube (LND. Inc., n.d.)</strong></p>
 
@@ -150,13 +150,13 @@ The new components are checked for suitability for space
 
 <b> Design Choice </b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig4.png" alt="AEQ5-600FL0.5 Converter" width="400" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig4.jpg" alt="AEQ5-600FL0.5 Converter" width="400" class="img-center">
 
 <p align="center"><strong>Fig 2-5 AEQ5-600FL0.5 Converter (Element14, 2025)</strong></p>
 
 The AEQ5-600FL0.5 provides a reliable input of around 600V to the GM tube, allowing it to operate optimally without being overly-sensitive to small changes in load. This prevents over-voltage damage to the GM tube, and allows the GM tube to work at its optimal operating voltage. 
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig5.png" alt="Advanced Energy’s Senior Engineer confirming casing material" width="800" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig5.jpg" alt="Advanced Energy’s Senior Engineer confirming casing material" width="800" class="img-center">
 
 <p align="center"><strong>Fig 2-6 Advanced Energy’s Senior Engineer confirming casing material (E. Wang, personal communication, Mar 03, 2025)</strong></p>
 
@@ -176,7 +176,7 @@ The converter is powered by 5V and accepts a control signal ranging from 0V to 5
 
 As the converter experiences a significant rise in temperature during operation, effective heat management is required to ensure its continued optimal operation in space. This is because there is no air in the vacuum of space to remove heat from the converter via convection.  Thermally conductive but electrically insulating thermal pad is used to conduct heat from the converter to the aluminium shielding of the payload, while maintaining electrical isolation to prevent short circuits. This utilises the high volume of the shielding as an effective heatsink to radiate heat away in space, thereby preventing the converter from overheating and getting damaged in space. 
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig7.png" alt="SIL-PAD 2000 Thermal Pad" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig7.jpg" alt="SIL-PAD 2000 Thermal Pad" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-8 Figure 7.SIL-PAD 2000 Thermal Pad (DigiKey, 2025)</strong></p>
 
@@ -190,17 +190,17 @@ Its high thermal conductivity of 3.5W/m-K helps it efficiently conduct heat away
 
 <b>Design Implementation</b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig9.png" alt="Thermal pad applied to the inside of the shielding" width="400" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig9.jpg" alt="Thermal pad applied to the inside of the shielding" width="400" class="img-center">
 
 <p align="center"><strong>Fig 2-10 Thermal pad applied to the inside of the shielding</strong></p>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig10.png" alt="Converter pressed firmly on the thermal pad" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig10.jpg" alt="Converter pressed firmly on the thermal pad" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-11 Converter pressed firmly on the thermal pad</strong></p>
 
 Six 20mm by 25mm pieces of thermal pad were stacked to the left side of the shielding. so that the converter presses firmly onto the thermal pad when the PCB is mounted onto the shielding. This maximises the area of contact and minimises any gaps between the converter and the material, transferring heat effectively to the shielding in the vacuum of space.
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig11.png" alt="Thermal pad applied to underside of shield cover" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig11.jpg" alt="Thermal pad applied to underside of shield cover" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-12 Thermal pad applied to underside of shield cover</strong></p>
 
@@ -212,11 +212,11 @@ Three pieces of 22mm by 36mm of thermal pad were adhered on the top cover of the
 
 Cable ties were needed to physically fasten the GM Tube to the PCB to prevent the GM tube from experiencing violent vibrations during launch and receiving consequent damage.
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig12.png" alt="Pan-ty Cable Tie Halar Maroon" width="300" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig12.jpg" alt="Pan-ty Cable Tie Halar Maroon" width="300" class="img-center">
 
 <p align="center"><strong>Fig 2-13 Pan-ty Cable Tie Halar Maroon (Mouser Electronics, 2025)</strong></p>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig13.png" alt="Cable Tie Outgassing Data" width="800" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig13.jpg" alt="Cable Tie Outgassing Data" width="800" class="img-center">
 
 <p align="center"><strong>Fig 2-14 Cable Tie Outgassing Data (National Aeronautics and Space Administration, n.d.-c)</strong></p>
 
