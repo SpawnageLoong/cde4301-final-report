@@ -216,7 +216,7 @@ Cable ties were needed to physically fasten the GM Tube to the PCB to prevent th
 
 <p align="center"><strong>Fig 2-13 Pan-ty Cable Tie Halar Maroon (Mouser Electronics, 2025)</strong></p>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig13.png" alt="Cable Tie Outgassing Data" width="800" class="img-center"
+<img src="{{site.baseurl}}/assets/images/weihao/Fig13.png" alt="Cable Tie Outgassing Data" width="800" class="img-center">
 
 <p align="center"><strong>Fig 2-14 Cable Tie Outgassing Data (National Aeronautics and Space Administration, n.d.-c)</strong></p>
 
@@ -267,12 +267,12 @@ Considerations while designing the PCB are listed below.
 Internal conductors in the PCB like traces and external uncoated components on the PCB such as vias and exposed pads need to be 0.0025mm  and 0.00305mm apart per voltage of potential difference respectively. This is to prevent signal interference or electrical leakages (JHDPCB, 2024). 
 
 For a maximum of 600V of potential difference,
-Internal conductors clearance 
+<p>Internal conductors clearance 
 = <i>0.0025mm/v * 600V</i>
-= <i>1.5mm</i>
-External uncoated components 
+= <i>1.5mm</i></p>
+<p>External uncoated components 
 = <i>0.00305mm/v * 600V</i>
-= <i>1.83mm</i>
+= <i>1.83mm</i></p>
 
 Hence, internal conductors and external components need to be at least 1.5mm and 1,83mm apart. 
 
@@ -281,16 +281,16 @@ Hence, internal conductors and external components need to be at least 1.5mm and
 <p align="center"><strong>Fig 2-17 High voltage lines sufficient distances away from any low voltage line and components (Clearances marked in red) </strong></p>
 
 <b>GM Tube Placement</b>
-Since the GM tube receives radiation particles from its mica window, its window is oriented to face the right of the PCB which is unblocked by any component. This allows the GM tube to operate unhindered.
+<p>Since the GM tube receives radiation particles from its mica window, its window is oriented to face the right of the PCB which is unblocked by any component. This allows the GM tube to operate unhindered.</p>
 
 <b>Ground Pour</b>
-Clearance was ensured between the ground plane and the high voltage lines to avoid electrical short-circuit due to the high potential difference. 
+<p>Clearance was ensured between the ground plane and the high voltage lines to avoid electrical short-circuit due to the high potential difference. </p>
 
 <b>Electrical Alignment</b>
-The location of the pinstack was aligned with the low-voltage PCB developed by Sowmya. The high-voltage PCB needs to receive 5V and 3.3V power from the low voltage PCB, while sending GM tube signals to the ZSOM-M01 on the low-voltage PCB. To achieve this, a 6 header picoblade wire connects the boards. A 6 header molex male connector was placed on the right underside of the board to be closer to the other one on the low-voltage board. This allows a shorter picoblade wire to be used.
+<p>The location of the pinstack was aligned with the low-voltage PCB developed by Sowmya. The high-voltage PCB needs to receive 5V and 3.3V power from the low voltage PCB, while sending GM tube signals to the ZSOM-M01 on the low-voltage PCB. To achieve this, a 6 header picoblade wire connects the boards. A 6 header molex male connector was placed on the right underside of the board to be closer to the other one on the low-voltage board. This allows a shorter picoblade wire to be used.</p>
 
 <b>Mechanical Alignment</b>
-The PCB has to be mechanically mounted into the payload. Hence, the shape of the PCB and pinstack location was coordinated with Mingchuan who is developing the shielding and the mounting. The placement of the GM Tube was also coordinated to ensure that the entire payload will be shielded except for the GM tube for it to receive radiation particles.
+<p>The PCB has to be mechanically mounted into the payload. Hence, the shape of the PCB and pinstack location was coordinated with Mingchuan who is developing the shielding and the mounting. The placement of the GM Tube was also coordinated to ensure that the entire payload will be shielded except for the GM tube for it to receive radiation particles.</p>
 
 <b>2.4.2.2.2 Final Layout</b>
 The final PCB design incorporating the design considerations is shown below:
@@ -299,7 +299,7 @@ The final PCB design incorporating the design considerations is shown below:
 
 <p align="center"><strong>Fig 2-18 Final Layout </strong></p>
 
-### 2.4.5 Signal Conditioning Tuning
+### 2.4.5  Signal Detection Code
 A simple arduino code was also developed to allow the ZSOM-M01 detect signals from the GM tube. The full code can be found in appendix B6.
 
 The code was then passed to Richard to integrate into the ZSOM-M01 firmware.
@@ -354,7 +354,7 @@ The LED blinks whenever a new pulse appears on the oscilloscope screen, and it t
 
 <p align="center"><strong>Fig 2-25 Current drawn by the high-voltage PCB (left) and the low-voltage PCB (right) </strong></p>
 
-The high voltage PCB consumed between 0.086A to 0.14A. This, combined with the current drawn by the low-voltage PCB of between 0.026A to 0.032A, is lower than the 2A limit for our payload. Hence the 2A current supply limit is satisfied. 
+The high voltage PCB consumed between 0.086A to 0.14A. The high-voltage PCB, combined with the current drawn by the low-voltage PCB of between 0.026A to 0.032A, will draw a maximum current of 0.172A. This is lower than the 2A limit for our payload. Hence the 2A current supply limit is satisfied. 
 
 <b> Maximum Temperature during Operation </b>
 
