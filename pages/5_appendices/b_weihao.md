@@ -180,33 +180,38 @@ Following form this experiment, further optimizing the circuit components, espec
 
 ## Appendix B4: High Voltage Circuit Design
 
+The high voltage circuit is designed shown:
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 1.jpg" alt="Low Pass Filter" width="500" class="img-center">
+
+<div class="fig-label">Fig B4-1. High-voltage Circuit diagram</div>
+
 The high voltage circuit is made of the following parts:
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 21.png" alt="Low Pass Filter" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 2.jpg" alt="Low Pass Filter" width="500" class="img-center">
 
-<div class="fig-label">Fig B4-1. First Low Pass Filter</div>
+<div class="fig-label">Fig B4-2. First Lowpass Filter</div>
 
-Lowpass Filter (R1 and C0) to prevent signals from interfering with the source.
+Lowpass Filter (R0 and C0) to prevent signals from interfering with the GM tube.
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 2.png" alt="High Pass Filter" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 3.png" alt="High Pass Filter" width="500" class="img-center">
 
-<div class="fig-label">Fig B4-2. High Pass Filter</div>
+<div class="fig-label">Fig B4-3. Highpass Filter</div>
 
-Highpass Filter (R0 and C0) to filter signals towards the microcontroller.
+Highpass Filter (R1 and C0) to filter signals towards the microcontroller, as well as a lowpass filter to prevent Gm tube signals from intefering with the high-voltage source.
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 3.png" alt="Current Amplifier" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 4.jpg" alt="Current Amplifier" width="500" class="img-center">
 
-<div class="fig-label">Fig B4-3. Current Amplifier</div>
+<div class="fig-label">Fig B4-4. Current Amplifier</div>
 
-Current amplifier (Q0 and R3) to amplify the current of signals to be identified by the microcontroller.
+Current amplifier (Q0 and R3) to amplify the current of signals so that the signal becomes detectable by the microcontroller.
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 4.png" alt="Pull Up" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 5.jpg" alt="Pull Up" width="500" class="img-center">
 
-<div class="fig-label">Fig B4-4. Pull Up</div>
+<div class="fig-label">Fig B4-5. Pull Up</div>
 
-A 3.3V pull-up (R4) to bring the signal line to 3V3 if the line is floating.
+A 3.3V pull-up (R3) to bring the signal line to 3V3 if the line is floating.
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 5.png" alt="Low Pass Filter" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 6.jpg" alt="Low Pass Filter" width="500" class="img-center">
 
 Lowpass filter (C1) to clean up signal for reading.
 

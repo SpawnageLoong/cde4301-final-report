@@ -247,7 +247,7 @@ Based on the proof of concept, PCB schematic was designed as follows: [Link]({{s
 
 The overall design of the high voltage circuit remains unchanged since the proof-of-concept stage, except for the specific values of the resistors and capacitors. 
 
-Detailed circuit components can be found in the appendix B4.
+Detailed explanations for the circuit design can be found in the appendix B4.
 
 #### 2.4.2.2 PCB Layout 
 
