@@ -373,7 +373,7 @@ After the vibration testing, the payload was retested for any damage. It is foun
 
 <b>Thermal Testing</b>
 
-The payload was then subjected to 16 hour thermal cycle testing, with 4 hours each in cold (-30°C) and hot (+70°C) phase. The GM tube's counts per minute are then collected over this time and graphed along with the temperature temperature. 
+The payload was then subjected to 16 hour thermal cycle testing, with 4 hours each in cold (-25°C) and hot (+70°C) phase. The GM tube's counts per minute are then collected over this time and plotted along the temperature. 
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig26.png" alt="Plotting counts and temperature across duration of thermal cycling" width="600" class="img-center">
 
@@ -387,7 +387,7 @@ The PCB generally operated as per normal, detecting between the normal range of 
 
 Upon closer analysis, the count was unusually lower than 5 counts per minute for three minutes, at around 12 midnight. This may be due to a momentary event where the converter supplied less than the minimum voltage range of 450V to the GM tube. If the GM tube does not receive enough voltage, its signals will have a shorter period and get filtered by the lowpass filter on the signal net. Hence the detected signals may not be recorded by the ZSOM-M01. 
 
-However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, out of the 4 temperature shifts and over 16 hours, this event only occured once over a short 3 consecutive minutes. Hence, these 3 data points can considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection. 
+However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, it only occured once out of the 4 temperature shifts. Moreover, over 16 hours of testing, this event only occured once over a short 3 consecutive minutes. Hence, these 3 data points can be considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection. 
 
 ## 2.7 Conclusion
 
