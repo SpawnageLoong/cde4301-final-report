@@ -122,9 +122,9 @@ The detailed explanation for choosing ZSOM-M01 can be found in appendix B1.
 
 <p align="center"><strong>Fig 2-3 Pinout of ZSOM-M01 (Zero Error Systems, 2024b)</strong></p>
 
-The planned ZSOM-M01 pins to be used in the circuit were altered during prototyping. The Geiger-Müller (GM) tube now sends the detected signal at unpredictable intervals to the ZSOM-M01 via D4 interrupt pin. This allows the ZSOM-M01 to  count the signal immediately in the midst of its other operations, ensuring that the signals are recorded accurately.
+The ZSOM-M01 pins that were planned to be used in the circuit were altered during prototyping. The Geiger-Müller (GM) tube now sends the detected signal at unpredictable intervals to the ZSOM-M01 via D4 interrupt pin. This allows the ZSOM-M01 to  count the signal immediately in the midst of its other operations, ensuring that the signals are recorded accurately.
 
-The PWM pin from the ZSOM is no longer needed to controlthe converter. This further simplifies the circuit. The new connection will be shown in the later circuit design.
+The PWM pin from the ZSOM-M01 is no longer needed to controlthe converter. This further simplifies the circuit. The new connection will be shown in the later circuit design.
 
 #### 2.3.1.2 GM Tube
 
@@ -221,11 +221,11 @@ The Pan-ty Cable Tie Halar Maroon was selected for its low outgassing properties
 
 <b> Design Implementation </b>
 
-<img src="{{site.baseurl}}/assets/images/weihao/Fig14.png" alt="Cable-tie securing GM tube to PCB" width="600" class="img-center">
+<img src="{{site.baseurl}}/assets/images/weihao/Fig14.png" alt="Cable tie securing GM tube to PCB" width="600" class="img-center">
 
-<p align="center"><strong>Fig 2-15 Cable-tie securing GM tube to PCB</strong></p>
+<p align="center"><strong>Fig 2-15 Cable tie securing GM tube to PCB</strong></p>
 
-The cable-ties will be looped through holes designed on the PCB and tightened around the GM tube and PCB, firmly securing the GM tube in place and ensuring its mechanical stability throughout the launch and the mission.
+The  ties will be looped through holes designed on the PCB and tightened around the GM tube and PCB, firmly securing the GM tube in place and ensuring its mechanical stability throughout the launch and the mission.
 
 ## 2.4 Design Process
 
@@ -391,7 +391,7 @@ However, the counts returned to normal immediately after, signifying that the ci
 
 ## 2.7 Conclusion
 
-In conclusion, the high-voltage PCB have successfully proven that it can provide reliable radiation level readings even under extreme temperature environments and remains undamaged under intense vibrations. Furthermore, the additional materials like cable-tie and thermal pad posed no outgassing issues that may interfere with the other components and payloads. 
+In conclusion, the high-voltage PCB have successfully proven that it can provide reliable radiation level readings even under extreme temperature environments and remains undamaged under intense vibrations. Furthermore, the additional materials like cable tie and thermal pad posed no outgassing issues that may interfere with the other components and payloads. 
 
 ## 2.8 Future work
 
