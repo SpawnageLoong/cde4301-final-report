@@ -162,7 +162,7 @@ Reference was taken from a tutorial on Sparkfun on assembling the circuit compon
 <div class="fig-label">Figs B3-1, B3-2, B3-3. Reference circuit taken from Sparkfun tutorial (bitsmashed, 2009)</div>
 
 The circuit is then adapted for our project as shown below:
-<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 7.jpg" alt="Circuit Layout" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 7.jpg" alt="Circuit Schematic" width="500" class="img-center">
 
 <div class="fig-label">Fig B3-4. Adapted circuit schematic</div>
 
@@ -188,7 +188,7 @@ Following form this experiment, further optimizing the circuit components, espec
 ## Appendix B4: High Voltage Circuit Design
 
 The high voltage circuit is designed shown:
-<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 1.jpg" alt="Low Pass Filter" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B4/fig 1.jpg" alt="Circuit Schematic" width="500" class="img-center">
 
 <div class="fig-label">Fig B4-1. High-voltage Circuit diagram</div>
 
