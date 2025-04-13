@@ -161,13 +161,20 @@ Reference was taken from a tutorial on Sparkfun on assembling the circuit compon
 
 <div class="fig-label">Figs B3-1, B3-2, B3-3. Reference circuit taken from Sparkfun tutorial (bitsmashed, 2009)</div>
 
+The circuit is then adapted for our project as shown below:
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 7.jpg" alt="Circuit Layout" width="500" class="img-center">
+
+<div class="fig-label">Fig B3-4. Adapted circuit schematic</div>
+
 <img src="{{site.baseurl}}/assets/images/appendix_b/B3/figure 5.png" alt="Circuit Layout" width="500" class="img-center">
 
-<div class="fig-label">Fig B3-4. Prototype circuit</div>
+<div class="fig-label">Fig B3-5. Prototype circuit</div>
+
+A simple arduino code was then used to enable the Arduino Uno to detect the GM tube signal.
 
 <img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 6.png" alt="Circuit Layout" width="500" class="img-center">
 
-<div class="fig-label">Fig B3-5. Readings from the prototype circuit</div>
+<div class="fig-label">Fig B3-6. Readings from the prototype circuit</div>
 
 The microcontroller successfully detected the radiation signals from the GM Tube. 
 
