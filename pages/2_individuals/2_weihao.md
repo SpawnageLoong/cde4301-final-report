@@ -207,7 +207,7 @@ Three pieces of 22mm by 36mm of thermal pad were adhered on the top cover of the
 
 <b>Design Choice</b>
 
-Cable ties were needed to physically fasten the GM Tube to the PCB. This is to prevent the GM tube receiving damage when experiencing violent vibrations during launch.
+Cable ties were needed to physically fasten the GM tube to the PCB. This is to prevent the GM tube from receiving damage when experiencing violent vibrations during launch.
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig12.jpg" alt="Pan-ty Cable Tie Halar Maroon" width="300" class="img-center">
 
@@ -297,7 +297,7 @@ The final PCB design incorporating the design considerations is shown below:
 <p align="center"><strong>Fig 2-18 Final Layout </strong></p>
 
 ### 2.4.5  Signal Detection Code
-A simple arduino code was also developed to allow the ZSOM-M01 detect signals from the GM tube. The ZSOM-M01 will count the signals for a minute to provide the  radiation reaing ascounts per minute. The full code can be found in appendix B6.
+A simple arduino code was also developed to allow the ZSOM-M01 detect signals from the GM tube. The ZSOM-M01 will count the signals for a minute to provide the radiation reading as counts per minute. The full code can be found in appendix B6.
 
 The code was then passed to Richard to integrate into the ZSOM-M01 firmware.
 
@@ -359,7 +359,7 @@ The high voltage PCB consumed between 0.086A to 0.14A. The high-voltage PCB, com
 
 <p align="center"><strong>Fig 2-26 Thermal imaging of the circuit, converter is the hostess component </strong></p>
 
-After running for 4 hours, the high-voltage PCB hottest component was found to be the converter, and its temperature plateaued at 51.8°C degrees Celsius. As the maximum temperature reached by the converter is within its recommended operating temperature of -25°C to 70°C (Advanced Energy, 2023), the converter should be able to operate for prolonged periods of time during the mission.
+After running for 4 hours, the hottest component on the PCB was found to be the converter, and its temperature plateaued at 51.8°C degrees Celsius. As the maximum temperature reached by the converter is within its recommended operating temperature of -25°C to 70°C (Advanced Energy, 2023), the converter should be able to operate for prolonged periods of time during the mission.
 
 ### 2.6.2 Qualifications Testing (Post-integration)
 
@@ -367,27 +367,27 @@ The high-voltage PCB is then integrated together into the rest of the payload an
 
 <b>Sine and Random Vibration testing</b>
 
-The payload underwent both sine vibration and random vibration testing in all three axes to tet for its mechanical stability. The specifics of the virbtaion test, sine and random will be elaborated in Mingchuan's section.
+The payload underwent both sine vibration and random vibration testing in all three axes to tet for its mechanical stability. The specifics of the sine and random vibration test will be elaborated in Mingchuan's section.
 
-After the vibration testing, the payload was retested for any damage. It is found that the GM tube can still provide counts in the appropriate 5 to 60 range (ECOTEST, 2025), showing that the high-voltage PCB and its components is undamaged. This proves that the components chosen for the high-voltage PCB can withstand the intense vibrations during launch.
+After the vibration testing, the payload was retested for any damage. It is found that the GM tube can still provide counts per minute in the appropriate 5 to 60 range (ECOTEST, 2025), showing that the high-voltage PCB and its components is undamaged. This proves that the components chosen for the high-voltage PCB can withstand the intense vibrations during launch.
 
 <b>Thermal Testing</b>
 
-The payload was then subjected to 16 hour thermal cycle testing, with 4 hours each in cold (-25°C) and hot (+70°C) phase. The GM tube's counts per minute are then collected over this time and graphed along with the temperature temperature. 
+The payload was then subjected to 16 hour thermal cycle testing, with 4 hours each in cold (-30°C) and hot (+70°C) phase. The GM tube's counts per minute are then collected over this time and graphed along with the temperature temperature. 
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig26.png" alt="Plotting counts and temperature across duration of thermal cycling" width="600" class="img-center">
 
 <p align="center"><strong>Fig 2-27 Plotting counts and temperature across duration of thermal cycling</strong></p>
 
-The PCB generally operated as per normal, detecting between the normal range of 5 to 60 counts (ECOTEST, 2025), indicating no substantial damage to the circuit and proving its reliability over a wide temperature range that it is expected to experience in space. 
+The PCB generally operated as per normal, detecting between the normal range of 5 to 60 counts per minute (ECOTEST, 2025), indicating no substantial damage to the circuit and proving its reliability over a wide temperature range that it is expected to experience in space. 
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig27.png" alt="Outlier Count Data" width="800" class="img-center">
 
 <p align="center"><strong>Fig 2-28 Outlier Count Data</strong></p>
 
-Analysing closer, the count was unusually lower than 5 for three minutes, at around 12 midnight. This may be due to a momentary event where the converter supplied less than the minimum voltage range of 450V to the GM tube. If the GM tube does not receive enough voltage, its signals will have a shorter period and get filtered by the lowpass filter on the signal net. Hence the detected signals may not be recorded by the ZSOM-M01. 
+Upon closer analysis, the count was unusually lower than 5 counts per minute for three minutes, at around 12 midnight. This may be due to a momentary event where the converter supplied less than the minimum voltage range of 450V to the GM tube. If the GM tube does not receive enough voltage, its signals will have a shorter period and get filtered by the lowpass filter on the signal net. Hence the detected signals may not be recorded by the ZSOM-M01. 
 
-However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, out of the 4 temperature shifts and over 16 hours, this event only occured once over a short 3 minutes. Hence, these 3 datapoints can considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection. 
+However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, out of the 4 temperature shifts and over 16 hours, this event only occured once over a short 3 consecutive minutes. Hence, these 3 data points can considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection. 
 
 ## 2.7 Conclusion
 

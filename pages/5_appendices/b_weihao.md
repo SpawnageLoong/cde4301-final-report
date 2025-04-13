@@ -161,7 +161,7 @@ Reference was taken from a tutorial on Sparkfun on assembling the circuit compon
 
 <div class="fig-label">Figs B3-1, B3-2, B3-3. Reference circuit taken from Sparkfun tutorial (bitsmashed, 2009)</div>
 
-<img src="{{site.baseurl}}/assets/images/appendix_b/B3/fig 5.png" alt="Circuit Layout" width="500" class="img-center">
+<img src="{{site.baseurl}}/assets/images/appendix_b/B3/figure 5.png" alt="Circuit Layout" width="500" class="img-center">
 
 <div class="fig-label">Fig B3-4. Prototype circuit</div>
 
