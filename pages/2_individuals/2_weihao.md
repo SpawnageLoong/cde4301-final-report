@@ -26,7 +26,7 @@ permalink: /wei-hao/
 
 ## 2.1 Job Scope
 
-The objective of my work is to ensure that the payload can detect and record radiation levels accurately, and the components used to fulfil the objective are suitable for space applications. My scope of work consists of the following tasks:
+The objective of my work is to ensure that the payload can detect and record radiation levels accurately, and that the components used to fulfil the objective are suitable for space applications. My scope of work consists of the following tasks:
 
 <b>1. Radiation Sensor Operations</b>
 
