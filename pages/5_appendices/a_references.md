@@ -107,6 +107,8 @@ last_modified_date: 05-04-2025
 
 ### Onaizi, A. M., Amran, M., Tang, W., Betoush, N., Alhassan, M., Rashid, R. S. M., Yasin, M. F., Bayagoob, K. H., & Onaizi, S. A. (2024). Radiation-shielding concrete: A review of materials, performance, and the impact of radiation on concrete properties. Journal of Building Engineering, 97, 110800. [Link](https://doi.org/10.1016/j.jobe.2024.110800)
 
+### Panduit. (n.d.). Pan-Ty® PLT3S-M702Y Cable Tie, Maroon, HALAR, Heat and UV, 11.6"L, 50lb, PK1000. www.panduit.com. [Link] https://www.panduit.com/bin/panduit/productdetails?region=na&language=en&item=PLT2S-C702Y
+
 ### Parris, P. (2023, December 20). Guide to Rad-hard vs. Rad-tolerant. VORAGO Technologies. [Link](https://www.voragotech.com/blog/rad-hard-vs-rad-tolerant)
 
 ### Poivey, C., Barth, J. L., LaBel, K. A., Gee, G., & Safren, H. (n.d.). In-Flight Observations of Long-Term Single- Event Effect (SEE) Performance on Orbview-2 Solid State Recorders (SSR) [Link](https://radhome.gsfc.nasa.gov/radhome/papers/nsrec03_w16.pdf)

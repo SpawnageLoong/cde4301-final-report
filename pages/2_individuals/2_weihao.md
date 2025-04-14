@@ -93,6 +93,24 @@ The payload requires certain specifications to be met to operate as intended. Si
         High CVCM values indicate that unwanted vapours will condense on the payload and its adjacent components, which may contaminate or interfere with operations of nearby sensitive equipment that need cleanliness (Kern, 2019). TML must also be low as the vaporised material may condense on surrounding equipment and hamper their operations (Kern, 2019).
       </td>
     </tr>
+    <tr>
+      <td>Thermal resistance</td>
+      <td>
+        Component must be able to operate reliably from -25°C to 70°C (FalconUsersGuide, 2021).
+      </td>
+      <td>
+        Component must pass the thermal cycling test for qualifications testing. More details on thermal cycling test will becovered by Mingchuan
+      </td>
+    </tr>
+    <tr>
+      <td>Mechanical robustness</td>
+      <td>
+        Component must be able to operate reliably after intense vibrations from all axis experienceed during launch.
+      </td>
+      <td>
+        Component must pass the random and sine vibrations test for qualifications testing. More details on vibration tests will be covered by Mingchuan.
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -116,6 +134,8 @@ The ZSOM-M01 remained on the final design due to its reliability in storing data
 
 The detailed explanation for choosing ZSOM-M01 can be found in appendix B1.
 
+The ZSOM-M01 can operature within the temperature range of -40°C to 105°C, allowing it to operate normally within the temperature range for the thermal cycling test. 
+
 <b>Design Implementation</b>
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig2.jpg" alt="Pinout of ZSOM-M01" width="600" class="img-center">
@@ -138,7 +158,7 @@ The GM tube remained on the final design as it could provide robust signals as a
 
 <p align="center"><strong>Fig 2-4 LND712 GM Tube (LND. Inc., n.d.)</strong></p>
 
-The LND 712 is chosen for our purposes. It requires between 450V to 650V to operate, which can be supplied easily with a DC-to-DC converter, making it easy to integrate. The connections required are also very simple, requiring two resistors and a 50pF capacitor. (LND. Inc., n.d.). 
+The LND 712 is chosen for our purposes. It requires between 450V to 650V to operate, which can be supplied easily with a DC-to-DC converter, making it easy to integrate. The connections required are also very simple, requiring two resistors and a 50pF capacitor. The GM tube can also operate between -40°C to 70°C, hence it can operate normally during the thermal cycling test (LND. Inc., n.d.). 
 
 ### 2.3.2 New Components
 Several new components are added to the final design.
@@ -151,7 +171,7 @@ Several new components are added to the final design.
 
 <p align="center"><strong>Fig 2-5 AEQ5-600FL0.5 Converter (Element14, 2025)</strong></p>
 
-The AEQ5-600FL0.5 provides a reliable input of around 600V to the GM tube, allowing the Gm tube to operate optimally without being vulnerable to small changes in load that may disrupt its poeer supply. This prevents over-voltage damage to the GM tube, and allows it to work at its optimal operating voltage. 
+The AEQ5-600FL0.5 provides a reliable input of around 600V to the GM tube, allowing the Gm tube to operate optimally without being vulnerable to small changes in load that may disrupt its poeer supply. This prevents over-voltage damage to the GM tube, and allows it to work at its optimal operating voltage. It can also operate between -25°C to 70°C, hence it can operate normally during the thermal cycling test (Element14, 2025).
 
 <img src="{{site.baseurl}}/assets/images/weihao/Fig5.jpg" alt="Advanced Energy’s Senior Engineer confirming casing material" width="800" class="img-center">
 
@@ -183,7 +203,7 @@ As the converter experiences a significant rise in temperature during operation,
 
 The SIL-PAD 2000 thermal pad was chosen as it has 0.07% and 0.03% as its TML and CVCM value respectively (National Aeronautics and Space Administration, n.d.-b). This makes it acceptable for space applications. 
 
-Its high thermal conductivity of 3.5W/m-K helps it efficiently conduct heat away from the converter. It also has adhesive on one side, making it easier to secure in the payload (DigiKey, 2025).
+Its high thermal conductivity of 3.5W/m-K helps it efficiently conduct heat away from the converter. It also has adhesive on one side, making it easier to secure in the payload. Furthermore, it can withstand temperatures from -60°C to 200°C, hence it will not receive damage from the thermal cycling test (DigiKey, 2025).
 
 <b>Design Implementation</b>
 
@@ -217,7 +237,9 @@ Cable ties were needed to physically fasten the GM tube to the PCB. This is to p
 
 <p align="center"><strong>Fig 2-14 Cable Tie Outgassing Data (National Aeronautics and Space Administration, n.d.-c)</strong></p>
 
-The Pan-ty Cable Tie Halar Maroon was selected for its low outgassing properties, as compared to other cable-ties. Its TML and CVCM values were 0.21% and 0.01%, within the acceptable range for space applications (National Aeronautics and Space Administration, n.d.-c).
+The Pan-ty Cable Tie Halar Maroon was selected for its low outgassing properties, as compared to other cable-ties. Its TML and CVCM values were 0.21% and 0.01%, within the acceptable range for space applications (National Aeronautics and Space Administration, n.d.-c). 
+
+It can also withstand the temperature range of -60°C to 125°C, thus avoiding any damage during the thermal cycling test (Panduit, n.d.).
 
 <b> Design Implementation </b>
 
@@ -387,7 +409,7 @@ The PCB generally operated as per normal, detecting between the normal range of 
 
 Upon closer analysis, the count was unusually lower than 5 counts per minute for three minutes, at around 12 midnight. This may be due to a momentary event where the converter supplied less than the minimum voltage range of 450V to the GM tube. If the GM tube does not receive enough voltage, its signals will have a shorter period and get filtered by the lowpass filter on the signal net. Hence the detected signals may not be recorded by the ZSOM-M01. 
 
-However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, it only occured once out of the 4 temperature shifts. Moreover, over 16 hours of testing, this event only occured once over a short 3 consecutive minutes. Hence, these 3 data points can be considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection. 
+However, the counts returned to normal immediately after, signifying that the circuit did not suffer any permanent damage. Furthermore, while this event may be attributed to the rapid change in temperature, it only occured once out of the 4 temperature shifts. Moreover, over 16 hours of testing, this event only occured once over a short 3 consecutive minutes. Hence, these 3 data points can be considered as outliers and confidence remains high in the high-voltage PCB's ability to provide robust radiation detection under extreme temperatures and changes in temperature. 
 
 ## 2.7 Conclusion
 
