@@ -108,7 +108,7 @@ CAN is being used as the layer 2 communications protocol. It is widely used and 
 
 The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050. There are many software libraries available that support these two chips. The CAN Controller connects to the SPI of the primary MCU.
 
-While the TJA1050 is used during the development process because it is readily available on the same module as the MCP2515, it was replaced by the TCAN334D on our final PCB. This is because while the MCP2515 can run on both 5V and 3.3V, the TJA1050 can only run on 5V and uses 5V logic levels. Thus the transceiver was changed to a 3V3 one for reliability. The TCAN334D shares the exact same pinout as the TJA1050, so no changes to the PCB were needed. Furthermore, these was no need to adjust the software since the TCAN334D does not directly interface with the microcontroller.
+While the TJA1050 is used during the development process because it is readily available on the same module as the MCP2515, it was replaced by the TCAN334RD on our final PCB. This is because while the MCP2515 can run on both 5V and 3.3V, the TJA1050 can only run on 5V and uses 5V logic levels. Thus the transceiver was changed to a 3V3 one for reliability. The TCAN334RD shares the exact same pinout as the TJA1050, so no changes to the PCB were needed. Furthermore, these was no need to adjust the software since the TCAN334RD does not directly interface with the microcontroller.
 
 <img src="{{site.baseurl}}/assets/images/richard/canbus-module.png" alt="canbus module using the MCP2515" width="400" class="img-center">
 
