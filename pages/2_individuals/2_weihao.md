@@ -130,11 +130,11 @@ Only the ZSOM-M01 microcontroller and the GM tube persisted into the final desig
 
 <p align="center"><strong>Fig 2-2  ZSOM-M01 board (Zero Error Systems, 2024b)</strong></p>
 
-The ZSOM-M01 remained on the final design due to its reliability in storing data of the mission. This trait is supported by its radiation hardened status, Triple Modular Redundancy configuration and the Error Detection and Correction functionality. Since our main mission consists of a memory corruption experiment of Atmega32U4 microcontrollers, the ZSOM-M01 provides the robust foundation for collecting data for further analysis. 
+The ZSOM-M01 remained on the final design due to its reliability in storing data of the mission. This trait is supported by its radiation hardened status, Triple Modular Redundancy configuration and the Error Detection and Correction functionality (Zero Error Systems, 2024b). Since our main mission consists of a memory corruption experiment of Atmega32U4 microcontrollers, the ZSOM-M01 provides the robust foundation for collecting data for further analysis. 
 
 The detailed explanation for choosing ZSOM-M01 can be found in appendix B1.
 
-The ZSOM-M01 can operature within the temperature range of -40°C to 105°C, allowing it to operate normally within the temperature range for the thermal cycling test. 
+The ZSOM-M01 can operature within the temperature range of -40°C to 105°C, allowing it to operate normally within the temperature range for the thermal cycling test (Zero Error Systems, 2024b). 
 
 <b>Design Implementation</b>
 
