@@ -106,7 +106,9 @@ For rideshares without the PC104 pinstack, the picoblade connector will be used.
 
 CAN is being used as the layer 2 communications protocol. It is widely used and is one of the protocols used by the Faraday Dragon rideshare. The primary MCU (ZSOM) does not have any onboard CAN hardware, so an external module is needed.
 
-The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050 and there are many software libraries available that support these two chips. The CAN Controller connects to the SPI of the primary MCU.
+The CAN Controller is the MCP2515 and the CAN Transceiver is the TJA1050. There are many software libraries available that support these two chips. The CAN Controller connects to the SPI of the primary MCU.
+
+While the TJA1050 is used during the development process because it is readily available on the same module as the MCP2515, it was replaced by the TCAN334RD on our final PCB. This is because while the MCP2515 can run on both 5V and 3.3V, the TJA1050 can only run on 5V and uses 5V logic levels. Thus the transceiver was changed to a 3V3 one for reliability. The TCAN334RD shares the exact same pinout as the TJA1050, so no changes to the PCB were needed. Furthermore, these was no need to adjust the software since the TCAN334RD does not directly interface with the microcontroller.
 
 <img src="{{site.baseurl}}/assets/images/richard/canbus-module.png" alt="canbus module using the MCP2515" width="400" class="img-center">
 
