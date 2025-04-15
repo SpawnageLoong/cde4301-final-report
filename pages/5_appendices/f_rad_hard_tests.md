@@ -19,7 +19,7 @@ These are test results provided by Zero Error Systems.
     <td>Proton Single-Event Effect on ZSOM-M01 (Zero Error Systems, 2024a)</td>
     <td>
       <ul>
-        <li>No SEL observed with up to 200MeV proton energy at fluence up to 2.57x10</li>
+        <li>No SEL observed with up to 200MeV proton energy at fluence up to 2.57x10 P+/cm2</li>
         <li>SEFI was observed, and a system reset could address the SEFI.</li>
         <li>SEU was observed on the SRAM of the SAMD21 MCU.</li>
       </ul>
@@ -59,7 +59,7 @@ These are test results provided by Zero Error Systems.
       <ul>
         <li>Single-Event Latch‐up (SEL) and Destructive Single Event Effects (DSEE):
           <ul>
-            <li>ZES100F-QFN32SP is SEL immune up to a LET of 2/mg, the highest LET used during SEL testing, at the condition of a maximum power supply of +5V and heated to 125°C.</li>
+            <li>ZES100F-QFN32SP is SEL immune up to a LET of 110 MeV.cm2/g, the highest LET used during SEL testing, at the condition of a maximum power supply of +5V and heated to 125°C.</li>
             <li>There were no destructive events observed during or after the SEL test runs.</li>
           </ul>
         </li>
@@ -68,7 +68,7 @@ These are test results provided by Zero Error Systems.
             <li>ZES100F-QFN32SP LET used during SEL testing, at room temperature.</li>
           </ul>
         </li>
-        <li>ZES100F-QFN32SP Functionality o 2 /mg, the highest
+        <li>ZES100F-QFN32SP Functionality
           <ul>
             <li>When a Commercial-Off-the-Shelf (COTS) device is irradiated, ZES100F-QFN32SP exhibits an immediate response to every SEL experienced by the COTS device.</li>
           </ul>
@@ -80,7 +80,7 @@ These are test results provided by Zero Error Systems.
     <td>Total Ionizing Dose on ZES100F-QFN32SP Latchup Detection and Protection (LDAP) (Zero Error Systems, 2023a)</td>
     <td>
       <ul>
-        <li>Shows SEE error-free up to Linear Energy Transfer (LET) of 2/mg</li>
+        <li>Shows SEE error-free up to Linear Energy Transfer (LET) of 110 MeV.cm2/g</li>
         <li>3 samples of ZES100F-QFN32SP are tested up to 300Krad at the dose rate of ~13.88rad(Si)/s, and another 3 samples of ZES100F-QFN32SP are tested up to 50Krad at the dose rate of ~2.3rad(Si)/s. All 6 samples remain functional and pass the tests.</li>
       </ul>
     </td>
