@@ -96,19 +96,19 @@ The payload requires certain specifications to be met to operate as intended. Si
     <tr>
       <td>Thermal resistance</td>
       <td>
-        Component must be able to operate reliably from -25°C to 70°C (FalconUsersGuide, 2021).
+        Components must be able to operate reliably from -25°C to 70°C (FalconUsersGuide, 2021).
       </td>
       <td>
-        Component must pass the thermal cycling test for qualifications testing. More details on thermal cycling test will becovered by Mingchuan
+        PCB must pass the thermal cycling test for qualifications testing. More details on thermal cycling test will becovered by Mingchuan.
       </td>
     </tr>
     <tr>
       <td>Mechanical robustness</td>
       <td>
-        Component must be able to operate reliably after intense vibrations from all axis experienceed during launch.
+        PCB must be able to operate reliably after intense vibrations from all 3 axes experienced during launch.
       </td>
       <td>
-        Component must pass the random and sine vibrations test for qualifications testing. More details on vibration tests will be covered by Mingchuan.
+        PCB must pass the random and sine vibrations test for qualifications testing. More details on vibration tests will be covered by Mingchuan.
       </td>
     </tr>
   </tbody>
@@ -144,7 +144,7 @@ The ZSOM-M01 can operature within the temperature range of -40°C to 105°C, all
 
 The ZSOM-M01 pins that were planned to be used in the circuit were altered during prototyping. The Geiger-Müller (GM) tube now sends the detected signal at unpredictable intervals to the ZSOM-M01 via D4 interrupt pin. This allows the ZSOM-M01 to  count the signal immediately in the midst of its other operations, ensuring that the signals are recorded accurately.
 
-The PWM pin from the ZSOM-M01 is no longer needed to controlthe converter. This further simplifies the circuit. The new connection will be shown in the later circuit design.
+The PWM pin from the ZSOM-M01 is no longer needed to control the converter. This further simplifies the circuit. The new connection will be shown in the later circuit design.
 
 #### 2.3.1.2 GM Tube
 
