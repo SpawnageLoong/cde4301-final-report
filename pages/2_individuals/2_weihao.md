@@ -61,7 +61,7 @@ The payload requires certain specifications to be met to operate as intended. Si
     </tr>
     <tr>
       <td>Radiation Sensor</td>
-      <td>Detects alpha and beta particles</td>
+      <td>Detects alpha, beta and gamma particles</td>
       <td>Monitor the particles responsible for SEE.</td>
     </tr>
     <tr>
